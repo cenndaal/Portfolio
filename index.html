@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Saad Hussain — Enterprise Architect | TOGAF® · Azure · PMP</title>
+<meta name="description" content="Enterprise Architect with 15+ years leading architecture across government, education, and regulated infrastructure. Specialized in governance, integration design, cloud architecture, and technology lifecycle stewardship." />
+<meta name="keywords" content="Enterprise Architect, Solution Architect, TOGAF, Azure, Cloud Architecture, New Zealand, Auckland" />
+<meta name="author" content="Saad Hussain" />
+<meta property="og:title" content="Saad Hussain — Enterprise Architect" />
+<meta property="og:description" content="Enterprise Architect with 15+ years leading architecture across government, education, and regulated infrastructure in New Zealand and internationally." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Saad Hussain — Enterprise Architect" />
+<meta name="twitter:description" content="15+ years of architecture leadership across 3 continents." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* ═══════════════════════════════════════════════
+   TOKENS — DARK (Default)
+═══════════════════════════════════════════════ */
+:root,
+[data-theme="dark"] {
+  --bg-primary:   #06090F;
+  --bg-elevated:  #0B1120;
+  --bg-card:      #101828;
+  --bg-card-alt:  #141E33;
+  --border-subtle:#1C2A48;
+  --border-main:  #233256;
+  --text-faint:   #3B4F75;
+  --text-muted:   #5C7099;
+  --text-secondary:#94A3C3;
+  --text-primary: #CBD5E8;
+  --text-heading: #EDF1FA;
+  --accent:       #C9A84C;
+  --accent-bright:#E8CC6E;
+  --accent-dim:   rgba(201,168,76,0.12);
+  --accent-glow:  rgba(201,168,76,0.06);
+  --accent2:      #3D8ABF;
+  --accent2-dim:  rgba(61,138,191,0.12);
+  --r:            10px;
+  --nav-h:        72px;
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.2);
+  --shadow-md:    0 8px 32px rgba(0,0,0,0.3);
+  --shadow-lg:    0 20px 60px rgba(0,0,0,0.45);
+  --shadow-glow:  0 0 40px rgba(201,168,76,0.08);
+  --nav-bg:       rgba(6,9,15,0.8);
+  --pc:           201,168,76;
+  --img-border:   rgba(201,168,76,0.25);
+}
+
+[data-theme="light"] {
+  --bg-primary:   #F6F7FB;
+  --bg-elevated:  #ECEEF5;
+  --bg-card:      #FFFFFF;
+  --bg-card-alt:  #F2F3F8;
+  --border-subtle:#DFE2EB;
+  --border-main:  #CDD2DF;
+  --text-faint:   #B0B7C9;
+  --text-muted:   #7E899F;
+  --text-secondary:#556078;
+  --text-primary: #3A4562;
+  --text-heading: #121928;
+  --accent:       #A68B2A;
+  --accent-bright:#C4A52E;
+  --accent-dim:   rgba(166,139,42,0.1);
+  --accent-glow:  rgba(166,139,42,0.04);
+  --accent2:      #2870A0;
+  --accent2-dim:  rgba(40,112,160,0.08);
+  --shadow-sm:    0 1px 4px rgba(0,0,0,0.04);
+  --shadow-md:    0 6px 24px rgba(0,0,0,0.06);
+  --shadow-lg:    0 16px 48px rgba(0,0,0,0.08);
+  --shadow-glow:  0 0 40px rgba(166,139,42,0.05);
+  --nav-bg:       rgba(246,247,251,0.85);
+  --pc:           166,139,42;
+  --img-border:   rgba(166,139,42,0.3);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased;scroll-padding-top:var(--nav-h)}
+
+body{background:var(--bg-primary);color:var(--text-primary);font-family:'Inter',system-ui,sans-serif;line-height:1.7;overflow-x:hidden;transition:background .45s,color .45s}
+
+/* Skip link */
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--accent);color:var(--bg-primary);padding:8px 16px;border-radius:var(--r);font-weight:600;z-index:1000;transition:top .2s}
+.skip-link:focus{top:8px}
+
+/* ─── PRELOADER ─── */
+#preloader{position:fixed;inset:0;background:var(--bg-primary);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:28px;transition:opacity .6s,visibility .6s}
+#preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-logo{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.8rem;color:var(--text-heading);letter-spacing:-.03em}
+.loader-logo span{color:var(--accent)}
+.loader-ring{width:44px;height:44px;border:3px solid var(--border-main);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ─── SCROLL PROGRESS ─── */
+#scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-bright),var(--accent2));z-index:200;width:0%;border-radius:0 2px 2px 0}
+
+/* ─── NOISE TEXTURE ─── */
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");background-size:256px;pointer-events:none;z-index:0;opacity:.6}
+[data-theme="light"] body::before{opacity:.18}
+
+/* ─── TYPOGRAPHY ─── */
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;line-height:1.12}
+h1{font-size:clamp(2.8rem,6.5vw,5rem);font-weight:900;color:var(--text-heading);letter-spacing:-.04em}
+h2{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:700;color:var(--text-heading);letter-spacing:-.025em}
+h3{font-size:1.15rem;font-weight:600;color:var(--text-heading)}
+h4{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-family:'JetBrains Mono',monospace}
+p{font-size:1rem;color:var(--text-primary)}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent-bright)}
+strong{color:var(--text-heading);font-weight:600}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ─── LAYOUT ─── */
+.container{max-width:1140px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+.section{padding:110px 0;position:relative}
+.section+.section{border-top:1px solid var(--border-subtle)}
+.section-header{margin-bottom:60px}
+.section-header h4{margin-bottom:14px}
+.gold-line{width:44px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-bright));margin-top:18px;border-radius:2px}
+
+/* ═══════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════ */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:var(--nav-bg);backdrop-filter:blur(24px) saturate(1.3);-webkit-backdrop-filter:blur(24px) saturate(1.3);border-bottom:1px solid var(--border-subtle);transition:box-shadow .3s,background .4s}
+nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.25)}
+[data-theme="light"] nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.06)}
+
+.nav-inner{max-width:1140px;margin:0 auto;padding:0 28px;height:100%;display:flex;align-items:center;justify-content:space-between}
+
+.nav-logo{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:var(--text-heading);letter-spacing:-.02em;transition:color .3s}
+.nav-logo span{color:var(--accent)}
+
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;transition:color .25s;position:relative;padding:4px 0}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:center;transition:transform .3s cubic-bezier(.4,0,.2,1);border-radius:2px}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a.active{color:var(--accent)}
+.nav-links a.active::after{transform:scaleX(1)}
+
+/* Theme Toggle */
+.theme-toggle{background:var(--bg-card);border:1px solid var(--border-main);border-radius:100px;width:48px;height:28px;cursor:pointer;position:relative;transition:all .3s;flex-shrink:0}
+.theme-toggle::before{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--accent);transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px rgba(0,0,0,.2)}
+[data-theme="light"] .theme-toggle::before{transform:translateX(20px)}
+.theme-toggle:hover{border-color:var(--accent)}
+.theme-icon{position:absolute;top:50%;transform:translateY(-50%);font-size:.6rem;line-height:1;transition:opacity .3s}
+.theme-icon-moon{left:6px;opacity:1}
+.theme-icon-sun{right:6px;opacity:.4}
+[data-theme="light"] .theme-icon-moon{opacity:.4}
+[data-theme="light"] .theme-icon-sun{opacity:1}
+
+.nav-controls{display:flex;align-items:center;gap:16px}
+
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--text-muted);transition:all .3s;border-radius:2px}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);background:var(--accent)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);background:var(--accent)}
+
+@media(max-width:868px){
+  .nav-links{position:fixed;top:var(--nav-h);left:0;right:0;background:var(--bg-elevated);border-bottom:1px solid var(--border-subtle);flex-direction:column;gap:0;padding:12px 0;transform:translateY(-110%);opacity:0;transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .35s;backdrop-filter:blur(20px)}
+  .nav-links.open{transform:translateY(0);opacity:1}
+  .nav-links li{padding:0}
+  .nav-links a{display:block;padding:14px 28px;font-size:.82rem}
+  .nav-links a::after{display:none}
+  .nav-burger{display:flex}
+}
+
+/* ═══════════════════════════════════════════════
+   HERO — EXECUTIVE SPLIT LAYOUT
+═══════════════════════════════════════════════ */
+#hero{min-height:100svh;display:flex;align-items:center;padding-top:var(--nav-h);position:relative;overflow:hidden}
+
+#particle-canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
+
+/* Subtle grid */
+#hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border-subtle) 1px,transparent 1px),linear-gradient(90deg,var(--border-subtle) 1px,transparent 1px);background-size:72px 72px;opacity:.15;mask-image:radial-gradient(ellipse 70% 70% at 30% 50%,black 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 70% 70% at 30% 50%,black 0%,transparent 70%);z-index:0}
+
+.hero-glow{position:absolute;top:-15%;right:5%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(var(--pc),.08) 0%,transparent 60%);pointer-events:none;z-index:0;animation:glowDrift 8s ease-in-out infinite alternate}
+.hero-glow-2{position:absolute;bottom:-25%;left:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(61,138,191,.05) 0%,transparent 60%);pointer-events:none;z-index:0;animation:glowDrift 10s ease-in-out infinite alternate-reverse}
+
+@keyframes glowDrift{
+  0%{transform:translate(0,0) scale(1);opacity:.7}
+  100%{transform:translate(20px,-20px) scale(1.1);opacity:1}
+}
+
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:72px;align-items:center;width:100%;padding:72px 0}
+
+.hero-content{position:relative;z-index:1}
+
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--accent-dim);border:1px solid rgba(var(--pc),.2);border-radius:100px;padding:7px 16px;margin-bottom:32px;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
+
+.hero-name{margin-bottom:10px}
+.hero-name .gold-text{display:block;background:linear-gradient(135deg,var(--accent) 0%,var(--accent-bright) 60%,#F0D878 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+.hero-title{font-family:'Inter',sans-serif;font-size:clamp(.95rem,1.8vw,1.2rem);font-weight:300;color:var(--text-muted);margin-bottom:28px;letter-spacing:.03em;min-height:1.7em}
+.typing-cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent);margin-left:2px;vertical-align:text-bottom;animation:blink 1s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.hero-desc{font-size:1.02rem;line-height:1.8;color:var(--text-secondary);max-width:540px;margin-bottom:36px}
+
+.hero-certs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.cert-badge{font-family:'JetBrains Mono',monospace;font-size:.66rem;padding:5px 12px;border-radius:6px;border:1px solid var(--border-main);color:var(--text-muted);background:var(--bg-card);transition:all .3s;cursor:default}
+.cert-badge:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);transform:translateY(-2px);box-shadow:0 4px 16px rgba(var(--pc),.12)}
+
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* Buttons */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--accent),var(--accent-bright));color:#0A0E1A;font-family:'Outfit',sans-serif;font-weight:700;font-size:.88rem;padding:15px 30px;border-radius:var(--r);border:none;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);letter-spacing:.01em;position:relative;overflow:hidden;box-shadow:0 4px 16px rgba(var(--pc),.2)}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);transform:translateX(-110%);transition:transform .6s}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(var(--pc),.35)}
+.btn-primary:hover::before{transform:translateX(110%)}
+
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text-heading);font-family:'Outfit',sans-serif;font-weight:600;font-size:.88rem;padding:15px 30px;border-radius:var(--r);border:1px solid var(--border-main);cursor:pointer;transition:all .3s}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 24px rgba(var(--pc),.08)}
+
+/* ─── HERO PHOTO + STATS COLUMN ─── */
+.hero-right{display:flex;flex-direction:column;gap:28px;position:relative;z-index:1}
+
+/* Photo container */
+.hero-photo-wrapper{position:relative;display:flex;justify-content:center}
+
+.hero-photo-ring{position:relative;width:320px;height:320px;border-radius:50%;padding:4px;background:conic-gradient(from 45deg,var(--accent),var(--accent-bright),var(--accent2),var(--accent),var(--accent-bright));animation:ringRotate 12s linear infinite;box-shadow:0 0 60px rgba(var(--pc),.12)}
+@keyframes ringRotate{to{background:conic-gradient(from 405deg,var(--accent),var(--accent-bright),var(--accent2),var(--accent),var(--accent-bright))}}
+
+.hero-photo-inner{width:100%;height:100%;border-radius:50%;overflow:hidden;border:4px solid var(--bg-primary);position:relative}
+
+.hero-photo{width:100%;height:100%;object-fit:cover;object-position:center top;filter:contrast(1.05) brightness(1.02);transition:transform .5s;display:block}
+.hero-photo-wrapper:hover .hero-photo{transform:scale(1.04)}
+
+/* Floating credential badges around photo */
+.photo-badge{position:absolute;background:var(--bg-card);border:1px solid var(--border-main);border-radius:10px;padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;box-shadow:var(--shadow-md);z-index:2;white-space:nowrap;backdrop-filter:blur(8px);transition:transform .3s}
+.photo-badge:hover{transform:scale(1.06)}
+.photo-badge-1{top:20px;right:-30px;animation:floatBadge 4s ease-in-out infinite}
+.photo-badge-2{bottom:40px;left:-35px;animation:floatBadge 4s ease-in-out 1s infinite}
+.photo-badge-3{bottom:-10px;right:10px;animation:floatBadge 4s ease-in-out 2s infinite}
+
+@keyframes floatBadge{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+
+/* Stats strip under photo */
+.hero-stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border-subtle);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md)}
+
+.stat-cell{background:var(--bg-card);padding:18px 12px;text-align:center;transition:background .3s}
+.stat-cell:hover{background:var(--bg-card-alt)}
+.stat-cell:first-child{border-radius:14px 0 0 14px}
+.stat-cell:last-child{border-radius:0 14px 14px 0}
+
+.stat-number{font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:4px}
+.stat-label{font-size:.65rem;color:var(--text-faint);line-height:1.25;letter-spacing:.02em}
+
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-desc{margin-left:auto;margin-right:auto}
+  .hero-certs{justify-content:center}
+  .hero-actions{justify-content:center}
+  .hero-right{align-items:center}
+  .hero-photo-ring{width:260px;height:260px}
+  .photo-badge-1{right:-10px}
+  .photo-badge-2{left:-10px}
+}
+
+@media(max-width:600px){
+  .hero-photo-ring{width:220px;height:220px}
+  .hero-stats-strip{grid-template-columns:repeat(2,1fr)}
+  .stat-cell:first-child{border-radius:14px 0 0 0}
+  .stat-cell:nth-child(2){border-radius:0 14px 0 0}
+  .stat-cell:nth-child(3){border-radius:0 0 0 14px}
+  .stat-cell:last-child{border-radius:0 0 14px 0}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn-primary,.hero-actions .btn-secondary{width:100%;justify-content:center}
+  .photo-badge{display:none}
+}
+
+/* ═══════════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════════ */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about-text p{margin-bottom:20px;color:var(--text-secondary);line-height:1.85}
+.about-text p:last-child{margin-bottom:0}
+
+.about-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:14px;padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .3s}
+.about-card:hover{border-color:rgba(var(--pc),.25);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.about-card:hover::before{opacity:1}
+.about-card h4{margin-bottom:14px}
+
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}}
+
+/* ═══════════════════════════════════════════════
+   EXPERIENCE
+═══════════════════════════════════════════════ */
+.timeline{position:relative}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--border-main) 50%,transparent);border-radius:2px}
+
+.timeline-item{padding-left:40px;padding-bottom:56px;position:relative}
+.timeline-item:last-child{padding-bottom:0}
+
+.timeline-dot{position:absolute;left:-5px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg-primary);box-shadow:0 0 0 4px var(--accent-dim);transition:all .3s}
+.timeline-item:hover .timeline-dot{box-shadow:0 0 0 6px var(--accent-dim),0 0 20px rgba(var(--pc),.25)}
+
+.timeline-item.dim .timeline-dot{background:var(--text-faint);box-shadow:none}
+
+.timeline-meta{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px;margin-bottom:6px}
+.timeline-period{font-family:'JetBrains Mono',monospace;font-size:.73rem;color:var(--text-faint)}
+.timeline-company{font-family:'JetBrains Mono',monospace;font-size:.73rem;color:var(--accent);padding:3px 12px;background:var(--accent-dim);border-radius:6px;border:1px solid rgba(var(--pc),.15)}
+
+.timeline-role{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:700;color:var(--text-heading);margin-bottom:6px}
+.timeline-subtitle{font-size:.84rem;color:var(--text-muted);margin-bottom:18px;font-style:italic}
+
+.timeline-bullets{list-style:none;display:flex;flex-direction:column;gap:10px}
+.timeline-bullets li{position:relative;padding-left:20px;font-size:.92rem;color:var(--text-primary);line-height:1.65}
+.timeline-bullets li::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:700;font-size:1.1rem}
+
+.timeline-item.dim .timeline-bullets li{color:var(--text-faint)}
+.timeline-item.dim .timeline-role{color:var(--text-muted)}
+
+/* ═══════════════════════════════════════════════
+   SKILLS
+═══════════════════════════════════════════════ */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+
+.skill-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:14px;padding:30px;transition:all .35s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
+.skill-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
+.skill-card:hover{border-color:rgba(var(--pc),.2);transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.skill-card:hover::after{transform:scaleX(1)}
+
+.skill-card-icon{font-size:1.8rem;margin-bottom:18px;display:inline-block;transition:transform .3s}
+.skill-card:hover .skill-card-icon{transform:scale(1.15) rotate(-5deg)}
+.skill-card h3{margin-bottom:18px}
+
+.skill-tags{display:flex;flex-wrap:wrap;gap:7px}
+.skill-tag{font-family:'JetBrains Mono',monospace;font-size:.66rem;padding:4px 10px;background:var(--bg-card-alt);border:1px solid var(--border-subtle);border-radius:6px;color:var(--text-muted);transition:all .25s}
+.skill-card:hover .skill-tag{border-color:rgba(var(--pc),.15);color:var(--text-secondary)}
+
+/* ═══════════════════════════════════════════════
+   PROJECTS
+═══════════════════════════════════════════════ */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px}
+
+.project-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:16px;padding:34px;display:flex;flex-direction:column;gap:16px;transition:all .35s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform .45s}
+.project-card:hover{border-color:rgba(var(--pc),.2);transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.project-card:hover::before{transform:scaleX(1)}
+
+.project-icon{font-size:2.2rem;transition:transform .3s}
+.project-card:hover .project-icon{transform:scale(1.12)}
+.project-card h3{font-size:1.08rem;line-height:1.3}
+.project-card p{font-size:.87rem;color:var(--text-muted);flex-grow:1;line-height:1.7}
+.project-tags{display:flex;flex-wrap:wrap;gap:6px}
+.project-tag{font-family:'JetBrains Mono',monospace;font-size:.64rem;padding:4px 10px;border-radius:6px;background:var(--accent2-dim);border:1px solid rgba(61,138,191,.15);color:var(--accent2);transition:all .2s}
+
+/* ═══════════════════════════════════════════════
+   EDUCATION
+═══════════════════════════════════════════════ */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+
+.edu-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:14px;padding:34px;position:relative;overflow:hidden;transition:all .35s}
+.edu-card.featured{border-color:rgba(var(--pc),.25);background:linear-gradient(135deg,var(--bg-card),var(--bg-card-alt))}
+.edu-card.featured::before{content:'In Progress';position:absolute;top:18px;right:18px;font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--accent);background:var(--accent-dim);border:1px solid rgba(var(--pc),.25);padding:4px 10px;border-radius:100px;animation:pulse 2s ease-in-out infinite}
+.edu-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+
+.edu-degree{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text-heading);margin-bottom:8px;line-height:1.3}
+.edu-school{font-family:'JetBrains Mono',monospace;font-size:.76rem;color:var(--accent);margin-bottom:8px}
+.edu-location{font-size:.82rem;color:var(--text-faint)}
+
+/* Certs */
+.certs-section-header{margin-top:56px;margin-bottom:32px}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:14px}
+.cert-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:12px;padding:20px 24px;display:flex;align-items:flex-start;gap:14px;transition:all .3s}
+.cert-card:hover{border-color:rgba(var(--pc),.25);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.cert-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;background:var(--accent-dim)}
+.cert-name{font-size:.84rem;color:var(--text-primary);font-weight:500;line-height:1.4}
+.cert-issuer{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--text-faint);margin-top:4px}
+
+/* ═══════════════════════════════════════════════
+   ACHIEVEMENTS
+═══════════════════════════════════════════════ */
+.achievements-list{display:flex;flex-direction:column;gap:18px}
+.achievement-item{background:var(--bg-card);border:1px solid var(--border-subtle);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:26px 30px;display:flex;gap:20px;align-items:flex-start;transition:all .35s cubic-bezier(.4,0,.2,1)}
+.achievement-item:hover{border-left-color:var(--accent-bright);background:var(--bg-card-alt);transform:translateX(6px);box-shadow:var(--shadow-md)}
+.achievement-num{font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:800;color:var(--accent);flex-shrink:0;margin-top:3px;width:28px}
+.achievement-text{font-size:.94rem;color:var(--text-primary);line-height:1.7}
+
+/* ═══════════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════════ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.contact-intro p{color:var(--text-muted);margin-bottom:36px;line-height:1.8}
+
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.contact-link{display:flex;align-items:center;gap:14px;padding:18px 22px;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:12px;color:var(--text-primary);font-size:.9rem;transition:all .3s cubic-bezier(.4,0,.2,1)}
+.contact-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-glow);transform:translateX(6px);box-shadow:var(--shadow-md)}
+.contact-link-icon{font-size:1.1rem;width:28px;text-align:center;flex-shrink:0}
+
+.contact-form{display:flex;flex-direction:column;gap:18px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-group label{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--text-faint);letter-spacing:.08em;text-transform:uppercase}
+.form-group input,.form-group textarea{background:var(--bg-card);border:1px solid var(--border-main);border-radius:var(--r);padding:13px 18px;font-family:'Inter',sans-serif;font-size:.9rem;color:var(--text-heading);outline:none;transition:border-color .3s,box-shadow .3s;resize:none}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-faint)}
+.form-group.error input,.form-group.error textarea{border-color:#E74C4C;box-shadow:0 0 0 3px rgba(231,76,76,.12)}
+.form-error{font-size:.7rem;color:#E74C4C;display:none}
+.form-group.error .form-error{display:block}
+.form-submit{align-self:flex-start}
+
+.form-success{display:none;background:var(--accent-dim);border:1px solid rgba(var(--pc),.25);border-radius:var(--r);padding:16px 22px;font-size:.9rem;color:var(--accent);align-items:center;gap:10px}
+.form-success.show{display:flex;animation:fadeSlide .4s ease}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+  .contact-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);padding:36px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--text-faint)}
+.footer-copy span{color:var(--accent)}
+.footer-back{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--text-faint);display:flex;align-items:center;gap:6px;transition:color .2s}
+.footer-back:hover{color:var(--accent)}
+
+/* ─── BACK TO TOP ─── */
+#back-to-top{position:fixed;bottom:32px;right:32px;width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-bright));color:var(--bg-primary);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.2rem;z-index:90;opacity:0;transform:translateY(20px);transition:all .35s cubic-bezier(.4,0,.2,1);box-shadow:0 6px 20px rgba(var(--pc),.3);pointer-events:none}
+#back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:all}
+#back-to-top:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(var(--pc),.4)}
+
+@media(max-width:600px){#back-to-top{bottom:20px;right:20px;width:44px;height:44px;font-size:1rem}}
+
+/* ─── ANIMATIONS ─── */
+.fade-up{opacity:0;transform:translateY(36px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+.stagger .fade-up:nth-child(1){transition-delay:0ms}
+.stagger .fade-up:nth-child(2){transition-delay:70ms}
+.stagger .fade-up:nth-child(3){transition-delay:140ms}
+.stagger .fade-up:nth-child(4){transition-delay:210ms}
+.stagger .fade-up:nth-child(5){transition-delay:280ms}
+.stagger .fade-up:nth-child(6){transition-delay:350ms}
+.stagger .fade-up:nth-child(7){transition-delay:420ms}
+.stagger .fade-up:nth-child(8){transition-delay:490ms}
+
+@media(prefers-reduced-motion:reduce){
+  .fade-up{opacity:1;transform:none;transition:none}
+  .hero-glow,.hero-glow-2{animation:none}
+  .hero-tag::before{animation:none}
+  .typing-cursor{animation:none}
+  .photo-badge{animation:none}
+  .hero-photo-ring{animation:none}
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg-primary)}
+::-webkit-scrollbar-thumb{background:var(--border-main);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--text-faint)}
+
+/* ─── RESPONSIVE EXTRAS ─── */
+@media(max-width:600px){
+  .section{padding:80px 0}
+  .section-header{margin-bottom:44px}
+  .projects-grid,.skills-grid,.edu-grid,.certs-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ══════════ PRELOADER ══════════ -->
+<div id="preloader" role="status" aria-label="Loading">
+  <div class="loader-logo">Saad<span>.</span></div>
+  <div class="loader-ring"></div>
+</div>
+
+<!-- ══════════ SCROLL PROGRESS ══════════ -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ══════════ NAV ══════════ -->
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Go to top">Saad<span>.</span></a>
+    <ul class="nav-links" id="nav-links" role="menubar">
+      <li role="none"><a href="#about" role="menuitem">About</a></li>
+      <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
+      <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+      <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+      <li role="none"><a href="#education" role="menuitem">Education</a></li>
+      <li role="none"><a href="#achievements" role="menuitem">Achievements</a></li>
+      <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="theme-icon theme-icon-moon">🌙</span>
+        <span class="theme-icon theme-icon-sun">☀️</span>
+      </button>
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="hero" aria-label="Introduction">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-glow-2" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- LEFT: Content -->
+      <div class="hero-content" id="main-content">
+        <div class="hero-tag">Experienced IT Professional · Auckland, NZ</div>
+        <h1 class="hero-name">
+          Saad
+          <span class="gold-text">Hussain</span>
+        </h1>
+        <p class="hero-title" aria-live="polite">
+          <span id="typing-text"></span><span class="typing-cursor" aria-hidden="true"></span>
+        </p>
+        <p class="hero-desc">
+          Experienced IT Professional with 15+ years leading delivery services across government, education, and regulated infrastructure in New Zealand and internationally. Specialized in governance, integration design, cloud architecture, and technology lifecycle stewardship.
+        </p>
+        <div class="hero-certs" aria-label="Certifications">
+          <span class="cert-badge">TOGAF® v10</span>
+          <span class="cert-badge">Azure SA Expert</span>
+          <span class="cert-badge">M365 Expert</span>
+          <span class="cert-badge">PMP</span>
+          <span class="cert-badge">CKA / CKAD</span>
+          <span class="cert-badge">RHCSA</span>
+          <span class="cert-badge">VMware VCP</span>
+          <span class="cert-badge">Nutanix NCM5</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Get In Touch <span aria-hidden="true">→</span></a>
+          <a href="#experience" class="btn-secondary">View Experience</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Photo + Stats -->
+      <div class="hero-right">
+        <div class="hero-photo-wrapper fade-up">
+          <div class="hero-photo-ring">
+            <div class="hero-photo-inner">
+              <img src="saad-hussain.jpg" alt="Saad Hussain — Enterprise Architect" class="hero-photo" width="320" height="320" loading="eager" />
+            </div>
+          </div>
+          <div class="photo-badge photo-badge-1">☁️ Azure Expert</div>
+          <div class="photo-badge photo-badge-2">🏗️ TOGAF® v10</div>
+          <div class="photo-badge photo-badge-3">📋 PMP</div>
+        </div>
+        <div class="hero-stats-strip fade-up" aria-label="Career statistics">
+          <div class="stat-cell">
+            <div class="stat-number" data-count="15" data-suffix="+">0</div>
+            <div class="stat-label">Years</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-number" data-count="16" data-prefix="$" data-suffix="M+">0</div>
+            <div class="stat-label">Pipeline</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-number" data-count="30" data-suffix="+">0</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-number" data-count="8">0</div>
+            <div class="stat-label">Certs</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section id="about" class="section" style="background:var(--bg-elevated)" aria-label="About section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h4>01 / About</h4>
+      <h2>Architecture that empowers teams,<br/>Clarifies decisions,<br/>Removes friction,<br/>not architecture that blocks progress...</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="about-grid fade-up">
+      <div class="about-text">
+        <p>
+          With over a decade of experience across IT infrastructure, cloud services, and managed operations, I specialise in architecting, optimising, and governing enterprise‑grade technology platforms that elevate reliability, strengthen security, and drive operational excellence. My work spans cloud architecture, pre‑sales consulting, service delivery, and digital transformation—enabling organisations across Canada, the USA, the Gulf, and APAC to modernise with confidence and scale with resilience.
+        </p>
+        <p>
+          Currently based in Auckland, New Zealand, I serve at Network for Learning (N4L), a Crown‑owned digital services provider delivering secure connectivity and platform services to schools nationwide. My architectural practice is grounded in a core conviction: good architecture enables, not obstructs. I focus on simplifying complexity, defining practical standards that empower delivery teams, and translating intricate systems into clear, actionable decisions for both technical leaders and executive stakeholders.
+        </p>
+        <p>
+		<h4>My Mission:</h4> To bridge the gap between complex technical challenges and meaningful business outcomes. I am driven by the opportunity to design scalable, high‑performance solutions that empower organisations to operate efficiently, innovate faster, and stay future‑ready. Whether leading cloud transformation, shaping enterprise architecture, or advancing AI governance, my goal is to deliver measurable impact and long‑term value.        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="about-card">
+          <h4>What I’m Known For</h4>
+          <p style="font-size:1rem;color:var(--text-heading);font-weight:600;margin-top:8px">Cloud & Virtualisation</p>
+          <p style="font-size:.85rem;color:var(--text-muted);margin-top:4px">Designing scalable, secure cloud and hybrid environments that reduce operational overhead and enhance performance.</p>
+		  <p style="font-size:1rem;color:var(--text-heading);font-weight:600;margin-top:8px">IT Operations & Managed Services</p>
+          <p style="font-size:.85rem;color:var(--text-muted);margin-top:4px">Implementing ITIL‑aligned practices that consistently deliver 99.9%+ uptime across mission‑critical systems.</p>
+		  <p style="font-size:1rem;color:var(--text-heading);font-weight:600;margin-top:8px">Pre‑Sales & Solution Consulting</p>
+          <p style="font-size:.85rem;color:var(--text-muted);margin-top:4px">Influencing major transformation programmes and contributing to more than USD 16M in closed opportunities over the past six years.</p>
+		  <p style="font-size:1rem;color:var(--text-heading);font-weight:600;margin-top:8px">SLA, KPI & Governance Excellence</p>
+          <p style="font-size:.85rem;color:var(--text-muted);margin-top:4px">Strengthening service delivery through automation, proactive monitoring, and data‑driven operational governance.</p>
+		  <p style="font-size:1rem;color:var(--text-heading);font-weight:600;margin-top:8px">Architecture That Enables</p>
+          <p style="font-size:.85rem;color:var(--text-muted);margin-top:4px">Establishing standards, guardrails, and decision frameworks that accelerate delivery while ensuring long‑term security and sustainability.</p>
+
+        </div>
+        <div class="about-card">
+          <h4>Research Focus</h4>
+          <p style="font-size:.88rem;color:var(--text-primary);margin-top:12px">AI governance frameworks, My research focuses on AI governance frameworks, including the CPUS (Composite Privacy‑Utility Score) model and the TAAGI (Tikanga‑Aligned AI Governance Index) — Innovative approaches designed to support privacy‑preserving, culturally aligned, and ethically grounded AI adoption, particularly in indigenous‑sovereign data contexts.</p>
+        </div>
+        <div class="about-card">
+          <h4>Location & Status</h4>
+          <p style="font-size:.88rem;color:var(--text-primary);margin-top:12px">Auckland, New Zealand · NZ Perminent Resident · Full Working Rights and Open to senior architecture roles across NZ, AU, and remote.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ EXPERIENCE ══════════ -->
+<section id="experience" class="section" aria-label="Work experience">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h4>02 / Experience</h4>
+      <h2>Over a decade IT Experience with Pride <br/>Across 3 Continents</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="timeline">
+
+      <article class="timeline-item fade-up">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">Apr 2025 – Present</span>
+          <span class="timeline-company">N4L · Auckland</span>
+        </div>
+        <h3 class="timeline-role">Solution Architect — Delivery Team Security</h3>
+        <p class="timeline-subtitle">Network for Learning (N4L) — Crown-owned digital services provider for NZ schools</p>
+        <ul class="timeline-bullets">
+          <li>Serve as the primary technical escalation point for schools and ICT partners, diagnosing and resolving complex issues across Cloudpath, RADIUS/802.1X authentication, Ruckus SmartZone wireless infrastructure, Palo Alto and Fortigate firewalls, and multi-platform MDM (Jamf, Intune, GWS).</li>
+          <li>Contributed to secure access zone infrastructure design, aligning platform decisions with organizational security posture and risk appetite.</li>
+          <li>Configure and optimise Cloudpath for certificate-based Wi-Fi onboarding, troubleshooting end-to-end authentication and accounting issues including EAP failures, RADIUS timeout, certificate chain errors, and user identity mapping within integrated firewall solutions.</li>
+          <li>Designed and implemented API-driven integrations across Azure Entra, Intune, Google Workspace, Google Developer Console, and JAMF Pro — enabling automated identity and device metadata ingestion at national scale.</li>
+          <li>Deploy and manage security profiles and configuration policies across Jamf Pro, Microsoft Intune, and Google Workspace for iOS, macOS, Windows, ChromeOS and Android devices; including Apple DEP/ADE enrolment, Apple TV provisioning, iPad and MacBook fleet management for schools.</li>
+          <li>Configure and troubleshoot Palo Alto and Fortigate firewalls including policy rule management, NAT, threat prevention, and user identity integration (User-ID, LDAP connector) for granular access control aligned to school and student identity frameworks.</li>
+          <li>Create and maintain technical design documents and provisioning guides for N4L products; support presales efforts by delivering technical briefings and training sessions to internal teams, ICT partners, and school staff, translating complex network and security concepts into accessible guidance.</li>
+          <li>Deploy and configure Ruckus SmartZone cloud wireless controllers, troubleshoot WLAN connectivity issues including SSID configuration, RF interference, roaming, and authentication failures across school Wi-Fi environments.</li>
+          <li>Collaborate with vendors, ICT partners, and the Ministry of Education NZ to ensure SLA adherence, platform stabilisation, and ongoing service reliability; implemented KPI compliance frameworks and training standards aligned to ministry guidelines.</li>
+          <li>Built KPI frameworks and compliance processes aligned with Ministry of Education NZ requirements, delivering structured reporting at national scale.</li>
+          <li>Mentored delivery engineers and ICT partners, uplifting technical capability across a large, distributed stakeholder base.</li>
+        </ul>
+      </article>
+
+      <article class="timeline-item fade-up">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">Jan 2021 – Feb 2025</span>
+          <span class="timeline-company">Dell Technologies · GCC</span>
+        </div>
+        <h3 class="timeline-role">Advisory Solution Architect</h3>
+        <p class="timeline-subtitle">Enterprise Architecture · Government, Financial Services & Energy · Middle East, Turkey & Africa</p>
+        <ul class="timeline-bullets">
+          <li>Service Delivery & Operations Management – Oversee the end-to-end delivery of IT services, ensuring SLA compliance, minimizing downtime, and continuously improving processes..</li>
+          <li>Project & Program Management – Lead cross-functional teams, define project roadmaps, manage budgets, and drive on-time, within-budget execution of IT initiatives..</li>
+          <li>Client & Stakeholder Engagement – Establish trusted relationships with customers, ensuring alignment of IT services with business needs while delivering exceptional service experiences..</li>
+          <li>Performance Optimization & KPI Management – Develop and implement KPI, SLAs, and governance frameworks to monitor service quality, drive efficiency, and enhance value delivery..</li>
+          <li>Incident & Risk Management – Identify and mitigate service risks proactively, ensuring business continuity through robust incident response and resolution strategies..</li>
+          <li>Vendor & Partner Collaboration – Work with technology vendors and third-party providers to drive service improvements, negotiate contracts, and optimize resource utilization..</li>
+          <li>Technology & Process Innovation – Continuously assess emerging IT trends and best practices to enhance service capabilities, automation, and cost-effectiveness..</li>
+          <li>Compliance & Security Governance – Ensure all IT services align with regulatory, security, and compliance standards, mitigating potential risks..</li>
+          <li>Produced cost-benefit analyses, scenario-based impact assessments, and architecture governance reporting for executive decision-making.</li>
+          <li>Led workload migration programmes with milestone management, operational readiness planning, and post-migration warranty oversight.</li>
+        </ul>
+      </article>
+
+      <article class="timeline-item fade-up">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">Jan 2019 – Feb 2021</span>
+          <span class="timeline-company">VaporVM · Dubai</span>
+        </div>
+        <h3 class="timeline-role">Enterprise Solution Architect</h3>
+        <p class="timeline-subtitle">Cloud, M365 & Hybrid Architecture · End-to-End Transformation Projects</p>
+        <ul class="timeline-bullets">
+		  <li>Contributed to <strong>$16M+ solution pipeline</strong> through pre-sales architecture, RFP responses, and executive stakeholder workshops.</li>
+          <li>Designed and delivered <strong>30+ hybrid cloud and M365 transformation projects</strong> — establishing platform standards, configuration patterns, and governance guardrails.</li>
+          <li>Defined architecture standards, principles, and integration reference patterns across applications, cloud, and identity platforms — reducing duplication and improving maintainability.</li>
+          <li>Led principal engineering teams across Data, Cloud, Infrastructure, and Networks for solution preparation, validation, and delivery.</li>
+          <li>Delivered migration runbooks, architecture documentation, and operational readiness plans with governance sign-off and post-implementation review.</li>
+          <li>Delivered high-value client engagements, including cloud migration, DR planning, and capacity forecasting.</li>
+          <li>Principal SME for VMware NSX, Tanzu, and Azure in cloud transformation and lifecycle management engagements.</li>
+        </ul>
+      </article>
+
+      <article class="timeline-item fade-up">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">Aug 2017 – Dec 2018</span>
+          <span class="timeline-company">Jaffer Business Systems</span>
+        </div>
+        <h3 class="timeline-role">Virtualization Specialist</h3>
+        <p class="timeline-subtitle">Karachi, Pakistan</p>
+        <ul class="timeline-bullets">
+          <li>Delivered end-to-end VMware infrastructure deployments — ESXi clusters, vCenter, HA/DR configurations, and SAN storage integration.</li>
+          <li>Delivered enterprise virtualization projects using VMware products (i.e., vSphere, SDDC, VDI, NSX, VCF, VCD, WSONE, Aria Suit, AVI & VMware Carbon etc.).</li>
+          <li>Collaborated with cross-functional teams to deliver integrated IT solutions that supported business continuity and disaster recovery strategies.</li>
+          <li>Supported server, storage, and backup operations for national-scale clients, ensuring compliance with safety and continuity standards.</li>
+		  <li>Install, Configure, Manage, Update and Upgrade for Major Banks, Govt Institutions and major FMCG's clients in Pakistan.</li>
+        </ul>
+      </article>
+
+      <article class="timeline-item dim fade-up">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">2011 – 2017</span>
+          <span class="timeline-company" style="color:var(--text-muted);background:var(--bg-card)">Earlier Roles</span>
+        </div>
+        <h3 class="timeline-role">System Engineer & Administrator</h3>
+        <p class="timeline-subtitle">Soneri Bank · Omrania & Associates · Liaquat National Hospital · Mobilink</p>
+        <ul class="timeline-bullets">
+          <li>Supported 24/7 enterprise infrastructure operations across environments with 1,000+ users.</li>
+          <li>Managed Windows Server, Linux, VMware, Active Directory, storage, and backup systems.</li>
+          <li>Performed incident response, RCA, patching, performance tuning, and security compliance.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SKILLS ══════════ -->
+<section id="skills" class="section" style="background:var(--bg-elevated)" aria-label="Skills">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h4>03 / Skills</h4>
+      <h2>Core Competencies &<br/>Technical Expertise</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="skills-grid stagger">
+      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🏛️</div><h3>Enterprise Architecture</h3><div class="skill-tags"><span class="skill-tag">TOGAF® v10</span><span class="skill-tag">Reference Architectures</span><span class="skill-tag">Architecture Governance</span><span class="skill-tag">Standards & Patterns</span><span class="skill-tag">Technology Roadmaps</span><span class="skill-tag">Lifecycle Management</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">☁️</div><h3>Cloud & Platform</h3><div class="skill-tags"><span class="skill-tag">Azure</span><span class="skill-tag">AWS</span><span class="skill-tag">Google Cloud</span><span class="skill-tag">M365</span><span class="skill-tag">Azure Entra</span><span class="skill-tag">Intune</span><span class="skill-tag">Hybrid Cloud</span><span class="skill-tag">Google Workspace</span><span class="skill-tag">Power Platform</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🔗</div><h3>Integration & API</h3><div class="skill-tags"><span class="skill-tag">API Design Patterns</span><span class="skill-tag">Integration Architecture</span><span class="skill-tag">API Management</span><span class="skill-tag">Github</span><span class="skill-tag">Identity Automation</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🔐</div><h3>Security Architecture</h3><div class="skill-tags"><span class="skill-tag">Zero Trust</span><span class="skill-tag">NZISM</span><span class="skill-tag">Conditional Access</span><span class="skill-tag">DLP</span><span class="skill-tag">Sensitivity Labels</span><span class="skill-tag">SIEM / SCOM</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🐳</div><h3>Infrastructure & DevOps</h3><div class="skill-tags"><span class="skill-tag">Kubernetes (CKA/CKAD)</span><span class="skill-tag">VMware</span><span class="skill-tag">Linux / RHCSA</span><span class="skill-tag">PowerShell</span><span class="skill-tag">Windows Server</span><span class="skill-tag">Nutanix</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">📊</div><h3>Governance & Delivery</h3><div class="skill-tags"><span class="skill-tag">PMP</span><span class="skill-tag">ITIL v4</span><span class="skill-tag">Solution Assurance</span><span class="skill-tag">RFP Responses</span><span class="skill-tag">Vendor Management</span><span class="skill-tag">Technical Debt Reduction</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🤖</div><h3>AI & Data Governance</h3><div class="skill-tags"><span class="skill-tag">AI Risk Frameworks</span><span class="skill-tag">Privacy-Preserving ML</span><span class="skill-tag">Copilot Governance</span><span class="skill-tag">CPUS Framework</span><span class="skill-tag">TAAGI Index</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🛠️</div><h3>Tools & Platforms</h3><div class="skill-tags"><span class="skill-tag">JIRA</span><span class="skill-tag">Confluence</span><span class="skill-tag">Power BI</span><span class="skill-tag">Visio</span><span class="skill-tag">ELK & Kibana</span><span class="skill-tag">Grafana</span><span class="skill-tag">Zabix</span><span class="skill-tag">Salesforce</span><span class="skill-tag">SCCM</span><span class="skill-tag">Microsoft Project</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🤖️</div><h3>AI Tools & Platforms</h3><div class="skill-tags"><span class="skill-tag">Copilot</span><span class="skill-tag">ChatGPT</span><span class="skill-tag">Claude</span><span class="skill-tag">Gemni</span><span class="skill-tag">Antigravity</span><span class="skill-tag">CodeX</span><span class="skill-tag">Notion AI</span><span class="skill-tag">GitHub Copilot</span><span class="skill-tag">Azure AI Studio</span><span class="skill-tag">Microsoft Security Copilot</span></div></div>
+    
+	</div>
+  </div>
+</section>
+
+<!-- ══════════ PROJECTS ══════════ -->
+<section id="projects" class="section" aria-label="Notable projects">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h4>04 / Notable Projects</h4>
+      <h2>Architecture Work &<br/>Key Initiatives</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="projects-grid stagger">
+      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🏫</div><h3>National Identity & Device Integration — N4L</h3><p>Designed API-driven integrations across Azure Entra, Intune, Google Workspace, and JAMF Pro, enabling automated identity and device metadata ingestion for New Zealand schools at national scale.</p><div class="project-tags"><span class="project-tag">Azure Entra</span><span class="project-tag">API Architecture</span><span class="project-tag">Intune</span><span class="project-tag">JAMF Pro</span><span class="project-tag">Compliance</span></div></article>
+      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🏦</div><h3>Bank Infrastructure CAPEX/OPEX Strategy</h3><p>Authored a five-year CAPEX/OPEX strategy report benchmarked against enterprise architecture standards. Presented directly to C-level executives, informing multi-million-dollar infrastructure investment decisions.</p><div class="project-tags"><span class="project-tag">EA Standards</span><span class="project-tag">Financial Modeling</span><span class="project-tag">Executive Reporting</span><span class="project-tag">Banking</span></div></article>
+      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🛢️</div><h3>Cloud Governance for Oil & Gas Clients</h3><p>Developed enterprise governance frameworks for AI-enabled and cloud productivity tools in highly regulated environments. Influenced multi-million-dollar managed services decisions through architecture-led analysis.</p><div class="project-tags"><span class="project-tag">M365 Governance</span><span class="project-tag">Copilot Rollout</span><span class="project-tag">Risk Framework</span><span class="project-tag">Oil & Gas</span></div></article>
+      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🔬</div><h3>CPUS — Composite Privacy-Utility Score</h3><p>MIT research framework evaluating privacy-utility tradeoffs across generative models with dual-jurisdiction regulatory mapping to GDPR Recital 26 and NZ Privacy Act 2020 IPP10.</p><div class="project-tags"><span class="project-tag">AI Governance</span><span class="project-tag">Privacy ML</span><span class="project-tag">GDPR</span><span class="project-tag">NZ Privacy Act</span><span class="project-tag">Research</span></div></article>
+      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🌿</div><h3>TAAGI — Tikanga-Aligned AI Governance Index</h3><p>Original AI governance framework integrating Te Mana Raraunga principles for indigenous data sovereignty into enterprise AI risk assessment, complementing NIST AI RMF.</p><div class="project-tags"><span class="project-tag">AI Governance</span><span class="project-tag">Indigenous Data</span><span class="project-tag">Te Mana Raraunga</span><span class="project-tag">Research</span></div></article>
+      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">⚡</div><h3>Hybrid Cloud Modernization — 30+ Projects</h3><p>Established platform standards, configuration patterns, and governance guardrails across 30+ hybrid cloud and M365 transformation projects. Defined architecture principles that reduced duplication.</p><div class="project-tags"><span class="project-tag">Hybrid Cloud</span><span class="project-tag">M365</span><span class="project-tag">Architecture Patterns</span><span class="project-tag">Migration</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ EDUCATION ══════════ -->
+<section id="education" class="section" style="background:var(--bg-elevated)" aria-label="Education">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h4>05 / Education</h4>
+      <h2>Academic Background &<br/>Certifications</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="edu-grid fade-up">
+      <div class="edu-card featured">
+        <div class="edu-degree">Master of Information Technology — Cyber Security</div>
+        <div class="edu-school">Whitecliffe School of Information Technology</div>
+        <div class="edu-location">Auckland, NZ · 2024 – 2025</div>
+      </div>
+	  <div class="edu-card">
+        <div class="edu-degree">Master of Science — Computer Science [Specialized in Networking and Telecommunication]</div>
+        <div class="edu-school">Muhammad Ali Jinnah University</div>
+        <div class="edu-location">Karachi, Pakistan · 2012 – 2014</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Bachelor of Science — Computer Science</div>
+        <div class="edu-school">Sir Syed University of Engineering & Technology</div>
+        <div class="edu-location">Karachi, Pakistan · 2008 – 2011</div>
+      </div>
+    </div>
+    <div class="certs-section-header fade-up"><h4>Certifications</h4></div>
+    <div class="certs-grid stagger">
+      <div class="cert-card fade-up"><div class="cert-icon" aria-hidden="true">🏗️</div><div><div class="cert-name">TOGAF® Enterprise Architecture v10</div><div class="cert-issuer">The Open Group</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon" aria-hidden="true">☁️</div><div><div class="cert-name">Azure Solutions Architect Expert</div><div class="cert-issuer">Microsoft</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon" aria-hidden="true">📧</div><div><div class="cert-name">M365 Enterprise Administrator Expert</div><div class="cert-issuer">Microsoft</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon" aria-hidden="true">📋</div><div><div class="cert-name">Project Management Professional (PMP)</div><div class="cert-issuer">PMI</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon" aria-hidden="true">🐳</div><div><div class="cert-name">CKA & CKAD — Kubernetes</div><div class="cert-issuer">CNCF / Linux Foundation</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon" aria-hidden="true">🐧</div><div><div class="cert-name">Red Hat Certified System Administrator</div><div class="cert-issuer">Red Hat</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon" aria-hidden="true">🖥️</div><div><div class="cert-name">VMware Certified Professional (VCP)</div><div class="cert-issuer">VMware / Broadcom</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon" aria-hidden="true">💠</div><div><div class="cert-name">Nutanix Certified Master 5 (NCM5)</div><div class="cert-issuer">Nutanix</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ACHIEVEMENTS ══════════ -->
+<section id="achievements" class="section" aria-label="Achievements">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h4>06 / Achievements</h4>
+      <h2>Impact &<br/>Recognition</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="achievements-list stagger">
+      <div class="achievement-item fade-up"><span class="achievement-num" aria-hidden="true">01</span><p class="achievement-text">Influenced <strong>$16M+ in solution pipeline</strong> through enterprise pre-sales architecture, RFP responses, and executive stakeholder workshops at Dell Technologies across the META region.</p></div>
+      <div class="achievement-item fade-up"><span class="achievement-num" aria-hidden="true">02</span><p class="achievement-text">Designed and delivered <strong>30+ hybrid cloud and M365 transformation projects</strong> end-to-end, establishing platform standards and governance guardrails used across multiple clients and industries.</p></div>
+      <div class="achievement-item fade-up"><span class="achievement-num" aria-hidden="true">03</span><p class="achievement-text">Built <strong>national-scale API integrations</strong> for N4L, connecting Azure Entra, Intune, Google Workspace, and JAMF Pro to automate identity and device management for New Zealand schools.</p></div>
+      <div class="achievement-item fade-up"><span class="achievement-num" aria-hidden="true">04</span><p class="achievement-text">Developed the <strong>CPUS (Composite Privacy-Utility Score)</strong> research framework and <strong>TAAGI (Tikanga-Aligned AI Governance Index)</strong> — original contributions to AI governance and indigenous data sovereignty.</p></div>
+      <div class="achievement-item fade-up"><span class="achievement-num" aria-hidden="true">05</span><p class="achievement-text">Maintained <strong>8 active industry certifications</strong> spanning enterprise architecture (TOGAF v10), cloud (Azure SA Expert), containers (CKA/CKAD), project management (PMP), and infrastructure (RHCSA, VCP, NCM5).</p></div>
+      <div class="achievement-item fade-up"><span class="achievement-num" aria-hidden="true">06</span><p class="achievement-text">Mentored delivery engineers and ICT partners across distributed teams, systematically <strong>uplifting technical capability</strong> and establishing architecture governance practices in organizations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact" class="section" style="background:var(--bg-elevated)" aria-label="Contact">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h4>07 / Contact</h4>
+      <h2>Let's Build Something<br/>Together</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="contact-grid fade-up">
+      <div class="contact-intro">
+        <p>I'm open to challenging roles, advisory engagements, and research collaborations across New Zealand, Australia, and remote. Whether it's enterprise transformation, cloud strategy, AI governance or new learning — I'd love to hear from you.</p>
+        <div class="contact-links">
+          <a href="mailto:saadhusan@hotmail.com" class="contact-link" id="contact-email-link"><span class="contact-link-icon" aria-hidden="true">📧</span>saadhusan@hotmail.com</a>
+          <a href="https://linkedin.com/in/saadhussain" class="contact-link" target="_blank" rel="noopener noreferrer" id="contact-linkedin-link"><span class="contact-link-icon" aria-hidden="true">💼</span>linkedin.com/in/saadhussain</a>
+          <a href="#" class="contact-link" id="contact-location-link"><span class="contact-link-icon" aria-hidden="true">📍</span>Auckland, New Zealand</a>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group" id="fg-name"><label for="c-name">Your Name</label><input type="text" id="c-name" name="name" placeholder="Jane Doe" required autocomplete="name" /><span class="form-error">Please enter your name</span></div>
+          <div class="form-group" id="fg-email"><label for="c-email">Email</label><input type="email" id="c-email" name="email" placeholder="jane@company.com" required autocomplete="email" /><span class="form-error">Please enter a valid email</span></div>
+        </div>
+        <div class="form-group" id="fg-subject"><label for="c-subject">Subject</label><input type="text" id="c-subject" name="subject" placeholder="Architecture engagement inquiry" required /><span class="form-error">Please enter a subject</span></div>
+        <div class="form-group" id="fg-message"><label for="c-message">Message</label><textarea id="c-message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea><span class="form-error">Please enter a message</span></div>
+        <div class="form-submit"><button type="submit" class="btn-primary" id="submit-btn">Send Message <span aria-hidden="true">→</span></button></div>
+        <div class="form-success" id="form-success" role="alert"><span aria-hidden="true">✓</span> Message sent successfully! I'll get back to you within 24 hours.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 Saad <span>Hussain</span>. Crafted with Learning something New as always :).</p>
+      <a href="#hero" class="footer-back" aria-label="Back to top"><span aria-hidden="true">↑</span> Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════ -->
+<script>
+(function(){
+  'use strict';
+  const prefersRM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── PRELOADER ──
+  window.addEventListener('load',()=>{
+    setTimeout(()=>{
+      document.getElementById('preloader').classList.add('hidden');
+      document.querySelectorAll('#hero .fade-up').forEach(el=>el.classList.add('visible'));
+      animateCounters();
+      startTyping();
+    },700);
+  });
+
+  // ── PARTICLES ──
+  const cvs=document.getElementById('particle-canvas'),ctx=cvs.getContext('2d');
+  let pts=[];const N=55,DIST=130;
+
+  function resize(){const h=document.getElementById('hero');cvs.width=h.offsetWidth;cvs.height=h.offsetHeight}
+  function spawn(){pts=[];for(let i=0;i<N;i++)pts.push({x:Math.random()*cvs.width,y:Math.random()*cvs.height,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.8+.5,o:Math.random()*.45+.15})}
+
+  function pColor(){return getComputedStyle(document.documentElement).getPropertyValue('--pc').trim()}
+
+  function draw(){
+    ctx.clearRect(0,0,cvs.width,cvs.height);const c=pColor();
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<DIST){ctx.beginPath();ctx.strokeStyle=`rgba(${c},${(1-d/DIST)*.12})`;ctx.lineWidth=.5;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke()}
+      }
+    }
+    pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(${c},${p.o})`;ctx.fill()});
+  }
+
+  function tick(){pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>cvs.width)p.vx*=-1;if(p.y<0||p.y>cvs.height)p.vy*=-1});draw();requestAnimationFrame(tick)}
+
+  if(!prefersRM){resize();spawn();tick();let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{resize();spawn()},200)})}
+
+  // ── TYPING ──
+  const texts=['TOGAF® v10 · Azure Solution Architect Expert','Enterprise & Cloud Architecture','Governance · Integration · Security','PMP · CKA · CKAD · RHCSA'];
+  let ti=0,ci=0,del=false;const tel=document.getElementById('typing-text');
+
+  function startTyping(){if(prefersRM){tel.textContent=texts[0];return}typeStep()}
+
+  function typeStep(){
+    const t=texts[ti];
+    del?ci--:ci++;
+    tel.textContent=t.substring(0,ci);
+    let d=del?25:55;
+    if(!del&&ci===t.length){d=2800;del=true}
+    else if(del&&ci===0){del=false;ti=(ti+1)%texts.length;d=350}
+    setTimeout(typeStep,d);
+  }
+
+  // ── COUNTERS ──
+  function animateCounters(){
+    document.querySelectorAll('.stat-number[data-count]').forEach(el=>{
+      const target=+el.dataset.count,pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',dur=2200,t0=performance.now();
+      function upd(now){const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=pre+Math.floor(e*target)+suf;p<1?requestAnimationFrame(upd):el.textContent=pre+target+suf}
+      prefersRM?el.textContent=pre+target+suf:requestAnimationFrame(upd);
+    });
+  }
+
+  // ── NAV ──
+  const nav=document.getElementById('main-nav'),burger=document.getElementById('nav-burger'),navL=document.getElementById('nav-links'),navAs=navL.querySelectorAll('a');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50),{passive:true});
+  burger.addEventListener('click',()=>{const o=burger.classList.toggle('open');navL.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+  navAs.forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');navL.classList.remove('open');burger.setAttribute('aria-expanded','false')}));
+
+  // ── SCROLL SPY ──
+  const secs=document.querySelectorAll('section[id]');
+  function spy(){const sy=scrollY+140;let cur='';secs.forEach(s=>{if(sy>=s.offsetTop&&sy<s.offsetTop+s.offsetHeight)cur=s.id});navAs.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur)})}
+  window.addEventListener('scroll',spy,{passive:true});
+
+  // ── PROGRESS BAR ──
+  const pb=document.getElementById('scroll-progress');
+  window.addEventListener('scroll',()=>{const t=document.documentElement.scrollHeight-innerHeight;pb.style.width=(t>0?scrollY/t*100:0)+'%'},{passive:true});
+
+  // ── BACK TO TOP ──
+  const btt=document.getElementById('back-to-top');
+  window.addEventListener('scroll',()=>btt.classList.toggle('visible',scrollY>500),{passive:true});
+  btt.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+
+  // ── THEME ──
+  const root=document.documentElement,tt=document.getElementById('theme-toggle');
+  root.setAttribute('data-theme',localStorage.getItem('portfolio-theme')||'dark');
+  tt.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);localStorage.setItem('portfolio-theme',n)});
+
+  // ── INTERSECTION OBSERVER ──
+  if(!prefersRM){
+    const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}}),{threshold:.08,rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.fade-up:not(#hero .fade-up)').forEach(el=>obs.observe(el));
+  }else{document.querySelectorAll('.fade-up').forEach(el=>el.classList.add('visible'))}
+
+  // ── FORM ──
+  const form=document.getElementById('contact-form'),fs=document.getElementById('form-success');
+  function vf(gid,iid,fn){const g=document.getElementById(gid),v=fn(document.getElementById(iid).value.trim());g.classList.toggle('error',!v);return v}
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    let ok=true;
+    ok=vf('fg-name','c-name',v=>v.length>0)&&ok;
+    ok=vf('fg-email','c-email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))&&ok;
+    ok=vf('fg-subject','c-subject',v=>v.length>0)&&ok;
+    ok=vf('fg-message','c-message',v=>v.length>0)&&ok;
+    if(ok){const b=document.getElementById('submit-btn');b.textContent='Sending...';b.disabled=true;setTimeout(()=>{form.reset();b.innerHTML='Send Message <span aria-hidden="true">→</span>';b.disabled=false;fs.classList.add('show');document.querySelectorAll('.form-group').forEach(g=>g.classList.remove('error'));setTimeout(()=>fs.classList.remove('show'),5000)},1200)}
+  });
+  document.querySelectorAll('.form-group input,.form-group textarea').forEach(i=>i.addEventListener('input',()=>i.closest('.form-group').classList.remove('error')));
+
+  // ── SMOOTH SCROLL ──
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id==='#')return;const t=document.querySelector(id);if(t){e.preventDefault();scrollTo({top:t.getBoundingClientRect().top+scrollY-parseInt(getComputedStyle(root).getPropertyValue('--nav-h')),behavior:'smooth'})}}));
+
+})();
+</script>
+</body>
+</html>
