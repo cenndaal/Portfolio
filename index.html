@@ -989,10 +989,10 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
     document.querySelectorAll('.fade-up:not(#hero .fade-up)').forEach(el=>obs.observe(el));
   }else{document.querySelectorAll('.fade-up').forEach(el=>el.classList.add('visible'))}
 
-  // ── FORM ──
+
+// ── FORM ──
   const form=document.getElementById('contact-form'),fs=document.getElementById('form-success'),fe=document.getElementById('form-error'),feTxt=document.querySelector('.form-error-text');
   const defaultFormError='Something went wrong while sending your message. Please try again or email me directly.';
-  const endpointPlaceholder='REPLACE_WITH_YOUR_WORKER_URL';
   function vf(gid,iid,fn){const g=document.getElementById(gid),v=fn(document.getElementById(iid).value.trim());g.classList.toggle('error',!v);return v}
   function showFormError(msg){if(feTxt)feTxt.textContent=msg||defaultFormError;fe.classList.add('show');setTimeout(()=>fe.classList.remove('show'),6000)}
   form.addEventListener('submit',async e=>{
@@ -1003,24 +1003,30 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
     ok=vf('fg-subject','c-subject',v=>v.length>0)&&ok;
     ok=vf('fg-message','c-message',v=>v.length>0)&&ok;
     if(!ok)return;
-    const b=document.getElementById('submit-btn'),endpoint=((window.CONTACT_FORM_ENDPOINT||'').trim()||(form.dataset.endpoint||'').trim());
+    const b=document.getElementById('submit-btn');
     b.textContent='Sending...';b.disabled=true;fs.classList.remove('show');fe.classList.remove('show');
     try{
-      if(!endpoint||endpoint.includes(endpointPlaceholder))throw new Error('endpoint_not_configured');
-      const payload={name:document.getElementById('c-name').value.trim(),email:document.getElementById('c-email').value.trim(),subject:document.getElementById('c-subject').value.trim(),message:document.getElementById('c-message').value.trim(),source:window.location.origin+window.location.pathname};
-      const r=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-      if(!r.ok)throw new Error(`submit_failed_${r.status}`);
+      const payload={
+        access_key:'e71e4cb7-1143-4d65-90b4-8a16a4e26671',
+        name:document.getElementById('c-name').value.trim(),
+        email:document.getElementById('c-email').value.trim(),
+        subject:document.getElementById('c-subject').value.trim(),
+        message:document.getElementById('c-message').value.trim(),
+        from_name:'Portfolio Contact Form'
+      };
+      const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+      const res=await r.json();
+      if(!res.success)throw new Error(res.message||'submit_failed');
       form.reset();document.querySelectorAll('.form-group').forEach(g=>g.classList.remove('error'));fs.classList.add('show');setTimeout(()=>fs.classList.remove('show'),5000);
     }catch(err){
       console.error(err);
-      const m=String(err&&err.message||''),st=(m.match(/^submit_failed_(\d{3})$/)||[])[1];
-      const msg=m==='endpoint_not_configured'?'Contact form is temporarily unavailable. Please email me directly.':st?`Message could not be sent (error ${st}). Please try again.`:defaultFormError;
+      const msg=err&&err.message&&err.message!=='submit_failed'?`Message could not be sent: ${err.message}. Please try again.`:defaultFormError;
       showFormError(msg);
     }
     finally{b.innerHTML='Send Message <span aria-hidden="true">→</span>';b.disabled=false}
   });
   document.querySelectorAll('.form-group input,.form-group textarea').forEach(i=>i.addEventListener('input',()=>i.closest('.form-group').classList.remove('error')));
-
+	
   // ── SMOOTH SCROLL ──
   document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id==='#')return;const t=document.querySelector(id);if(t){e.preventDefault();scrollTo({top:t.getBoundingClientRect().top+scrollY-parseInt(getComputedStyle(root).getPropertyValue('--nav-h')),behavior:'smooth'})}}));
 
