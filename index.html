@@ -298,32 +298,94 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.25)}
 @media(max-width:768px){.about-grid{grid-template-columns:1fr}}
 
 /* ═══════════════════════════════════════════════
-   EXPERIENCE
+   EXPERIENCE — SYSTEM SCHEMATIC RAIL
 ═══════════════════════════════════════════════ */
-.timeline{position:relative}
-.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--border-main) 50%,transparent);border-radius:2px}
+.exp-rail{position:relative;display:flex;flex-direction:column;gap:34px}
 
-.timeline-item{padding-left:40px;padding-bottom:56px;position:relative}
-.timeline-item:last-child{padding-bottom:0}
+/* Animated schematic spine */
+.exp-spine{position:absolute;left:19px;top:6px;bottom:6px;width:2px;z-index:0}
+.exp-spine svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.exp-spine-bg,.exp-spine-fg{fill:none;vector-effect:non-scaling-stroke}
+.exp-spine-bg{stroke:var(--border-main);stroke-width:2}
+.exp-spine-fg{stroke:url(#expSpineGrad);stroke-width:2;stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s cubic-bezier(.4,0,.2,1)}
+.exp-rail.spine-on .exp-spine-fg{stroke-dashoffset:0}
+.exp-spine-pulse{fill:var(--accent-bright);filter:drop-shadow(0 0 4px rgba(var(--pc),.9));opacity:0;transition:opacity .4s .6s}
+.exp-rail.spine-on .exp-spine-pulse{opacity:1}
 
-.timeline-dot{position:absolute;left:-5px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg-primary);box-shadow:0 0 0 4px var(--accent-dim);transition:all .3s}
-.timeline-item:hover .timeline-dot{box-shadow:0 0 0 6px var(--accent-dim),0 0 20px rgba(var(--pc),.25)}
+.exp-card{position:relative;padding-left:64px;z-index:1}
 
-.timeline-item.dim .timeline-dot{background:var(--text-faint);box-shadow:none}
+.exp-node{position:absolute;left:0;top:2px;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
+.exp-node-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(var(--pc),.25);transition:all .4s}
+.exp-node-dot{width:13px;height:13px;border-radius:50%;background:var(--accent);border:3px solid var(--bg-primary);box-shadow:0 0 0 4px var(--accent-dim);position:relative;z-index:1;transition:all .35s}
+.exp-card.is-current .exp-node-dot{background:var(--accent-bright);box-shadow:0 0 0 4px var(--accent-dim),0 0 18px rgba(var(--pc),.5)}
+.exp-card.is-current .exp-node-ring{border-color:rgba(var(--pc),.4);animation:nodeRingPulse 2.4s ease-in-out infinite}
+@keyframes nodeRingPulse{0%,100%{transform:scale(.85);opacity:.9}50%{transform:scale(1.35);opacity:0}}
+.exp-card.dim .exp-node-dot{background:var(--text-faint);box-shadow:none;border-color:var(--bg-primary)}
+.exp-card:hover .exp-node-dot{transform:scale(1.15)}
 
-.timeline-meta{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px;margin-bottom:6px}
-.timeline-period{font-family:'JetBrains Mono',monospace;font-size:.73rem;color:var(--text-faint)}
-.timeline-company{font-family:'JetBrains Mono',monospace;font-size:.73rem;color:var(--accent);padding:3px 12px;background:var(--accent-dim);border-radius:6px;border:1px solid rgba(var(--pc),.15)}
+.exp-card-inner{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:16px;overflow:hidden;transition:border-color .4s,box-shadow .4s,transform .35s;transform-style:preserve-3d;will-change:transform;position:relative}
+.exp-card-inner::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border-subtle) 1px,transparent 1px),linear-gradient(90deg,var(--border-subtle) 1px,transparent 1px);background-size:26px 26px;opacity:0;transition:opacity .4s;pointer-events:none;mask-image:radial-gradient(circle at var(--mx,50%) var(--my,50%),black 0%,transparent 65%);-webkit-mask-image:radial-gradient(circle at var(--mx,50%) var(--my,50%),black 0%,transparent 65%)}
+.exp-card:hover .exp-card-inner{border-color:rgba(var(--pc),.28);box-shadow:var(--shadow-lg)}
+.exp-card:hover .exp-card-inner::before{opacity:.6}
+.exp-card.dim .exp-card-inner{background:transparent}
 
-.timeline-role{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:700;color:var(--text-heading);margin-bottom:6px}
-.timeline-subtitle{font-size:.84rem;color:var(--text-muted);margin-bottom:18px;font-style:italic}
+.exp-card-head{padding:28px 30px 24px;cursor:pointer;position:relative;z-index:1;-webkit-tap-highlight-color:transparent}
+.exp-card-head:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
-.timeline-bullets{list-style:none;display:flex;flex-direction:column;gap:10px}
-.timeline-bullets li{position:relative;padding-left:20px;font-size:.92rem;color:var(--text-primary);line-height:1.65}
-.timeline-bullets li::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:700;font-size:1.1rem}
+.exp-head-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.exp-period-group{display:flex;align-items:center;gap:12px}
+.exp-period{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--text-faint);letter-spacing:.02em;white-space:nowrap}
+.exp-tenure-track{width:64px;height:4px;background:var(--border-subtle);border-radius:3px;overflow:hidden;position:relative}
+.exp-tenure-fill{position:absolute;inset:0 auto 0 0;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-bright));border-radius:3px;transition:width 1.1s cubic-bezier(.4,0,.2,1) .15s}
+.exp-card.spine-on .exp-tenure-fill{width:var(--tenure,0%)}
 
-.timeline-item.dim .timeline-bullets li{color:var(--text-faint)}
-.timeline-item.dim .timeline-role{color:var(--text-muted)}
+.exp-status-badge{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid rgba(var(--pc),.25);padding:4px 11px;border-radius:100px;display:inline-flex;align-items:center;gap:6px;flex-shrink:0}
+.exp-status-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
+
+.exp-role{font-family:'Outfit',sans-serif;font-size:1.28rem;font-weight:700;color:var(--text-heading);margin-bottom:8px;letter-spacing:-.01em}
+.exp-company-line{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;margin-bottom:10px}
+.exp-company{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);padding:3px 12px;background:var(--accent-dim);border-radius:6px;border:1px solid rgba(var(--pc),.15)}
+.exp-loc{font-size:.78rem;color:var(--text-faint)}
+.exp-subtitle{font-size:.85rem;color:var(--text-muted);font-style:italic;margin-bottom:20px;max-width:640px}
+
+.exp-metrics{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.exp-metric{display:flex;flex-direction:column;gap:2px;padding:10px 16px;background:var(--bg-card-alt);border:1px solid var(--border-subtle);border-radius:10px;min-width:108px}
+.exp-metric-num{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:800;color:var(--accent);line-height:1}
+.exp-metric-label{font-size:.63rem;color:var(--text-faint);letter-spacing:.03em;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
+
+.exp-stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
+.exp-chip{font-family:'JetBrains Mono',monospace;font-size:.65rem;padding:4px 11px;background:var(--accent2-dim);border:1px solid rgba(61,138,191,.18);border-radius:6px;color:var(--accent2)}
+
+.exp-toggle{display:inline-flex;align-items:center;gap:9px;background:none;border:1px solid var(--border-main);color:var(--text-heading);font-family:'Outfit',sans-serif;font-weight:600;font-size:.8rem;padding:10px 18px;border-radius:100px;cursor:pointer;transition:all .3s}
+.exp-toggle:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
+.exp-toggle-chevron{transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.exp-card.open .exp-toggle-chevron{transform:rotate(180deg)}
+.exp-toggle-label-open{display:none}
+.exp-card.open .exp-toggle-label-closed{display:none}
+.exp-card.open .exp-toggle-label-open{display:inline}
+
+.exp-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.4,0,.2,1)}
+.exp-card.open .exp-body{grid-template-rows:1fr}
+.exp-body-inner{overflow:hidden}
+
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:2px;padding:2px 30px 30px;border-top:1px solid var(--border-subtle);margin-top:2px}
+.exp-bullets li{display:flex;gap:16px;padding:13px 0;border-bottom:1px dashed var(--border-subtle)}
+.exp-bullets li:last-child{border-bottom:none}
+.exp-bullet-index{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--accent);opacity:.7;flex-shrink:0;padding-top:2px;width:22px}
+.exp-bullets li p{font-size:.9rem;color:var(--text-secondary);line-height:1.7;margin:0}
+
+.exp-card.dim .exp-role{color:var(--text-muted)}
+.exp-card.dim .exp-bullets li p{color:var(--text-faint)}
+.exp-card.dim .exp-status-badge{display:none}
+
+@media(max-width:640px){
+  .exp-card{padding-left:52px}
+  .exp-node{width:32px}
+  .exp-spine{left:15px}
+  .exp-card-head{padding:22px 18px 20px}
+  .exp-bullets{padding:2px 18px 24px}
+  .exp-head-top{flex-wrap:wrap}
+}
 
 /* ═══════════════════════════════════════════════
    SKILLS
@@ -642,158 +704,275 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
   <div class="container">
     <div class="section-header fade-up">
       <h4>02 / Experience</h4>
-      <h2>Over a decade IT Experience with Pride <br/>Across 3 Continents</h2>
+      <h2>Over a Decade of IT Delivery<br/>Across 3 Continents</h2>
       <div class="gold-line"></div>
+      <p style="margin-top:18px;max-width:560px;color:var(--text-muted);font-size:.9rem">Five roles, one throughline — turning complex infrastructure into systems people can trust. Tap any role to open the full record.</p>
     </div>
-    <div class="timeline">
 
-      <article class="timeline-item fade-up">
-        <div class="timeline-dot" aria-hidden="true"></div>
-        <div class="timeline-meta">
-          <span class="timeline-period">Apr 2025 – Present</span>
-          <span class="timeline-company">N4L · Auckland</span>
+    <div class="exp-rail" id="exp-rail">
+      <!-- Schematic spine: draws in on scroll, with a travelling signal pulse -->
+      <div class="exp-spine" id="exp-spine" aria-hidden="true">
+        <svg viewBox="0 0 4 100" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="expSpineGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--accent)" />
+              <stop offset="55%" stop-color="var(--accent-bright)" />
+              <stop offset="100%" stop-color="var(--accent2)" />
+            </linearGradient>
+          </defs>
+          <path class="exp-spine-bg" d="M2,0 L2,100" pathLength="1" />
+          <path class="exp-spine-fg" id="exp-spine-fg" d="M2,0 L2,100" pathLength="1" />
+          <circle class="exp-spine-pulse" r="2.4" cx="2" cy="0">
+            <animateMotion id="exp-spine-anim" dur="3.6s" repeatCount="indefinite">
+              <mpath href="#exp-spine-fg"></mpath>
+            </animateMotion>
+          </circle>
+        </svg>
+      </div>
+
+      <!-- ROLE 1 — N4L (current) -->
+      <article class="exp-card fade-up is-current" data-tenure="21">
+        <div class="exp-node" aria-hidden="true"><span class="exp-node-ring"></span><span class="exp-node-dot"></span></div>
+        <div class="exp-card-inner">
+          <header class="exp-card-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-1">
+            <div class="exp-head-top">
+              <div class="exp-period-group">
+                <span class="exp-period">Apr 2025 – Present</span>
+                <span class="exp-tenure-track" title="15 months and counting"><span class="exp-tenure-fill"></span></span>
+              </div>
+              <span class="exp-status-badge">Current Role</span>
+            </div>
+            <h3 class="exp-role">Solution Architect — Delivery Team Security</h3>
+            <div class="exp-company-line">
+              <span class="exp-company">N4L</span>
+              <span class="exp-loc">Auckland, NZ · Crown-owned digital services provider for NZ schools</span>
+            </div>
+            <p class="exp-subtitle">Owning national-scale identity, network security and MDM delivery for New Zealand's entire school network.</p>
+            <div class="exp-metrics">
+              <div class="exp-metric"><span class="exp-metric-num">2,700+</span><span class="exp-metric-label">Schools Supported</span></div>
+              <div class="exp-metric"><span class="exp-metric-num">4</span><span class="exp-metric-label">Identity Platforms Unified</span></div>
+              <div class="exp-metric"><span class="exp-metric-num">National</span><span class="exp-metric-label">Escalation Owner</span></div>
+            </div>
+            <div class="exp-stack">
+              <span class="exp-chip">Azure Entra ID</span><span class="exp-chip">Intune</span><span class="exp-chip">JAMF Pro</span><span class="exp-chip">Google Workspace</span><span class="exp-chip">Cloudpath / RADIUS 802.1X</span><span class="exp-chip">Ruckus SmartZone</span><span class="exp-chip">Palo Alto</span><span class="exp-chip">Fortigate</span>
+            </div>
+            <span class="exp-toggle" aria-hidden="true">
+              <span class="exp-toggle-label-closed">View all 16 responsibilities</span>
+              <span class="exp-toggle-label-open">Collapse</span>
+              <svg class="exp-toggle-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </header>
+          <div class="exp-body" id="exp-body-1">
+            <div class="exp-body-inner">
+              <ol class="exp-bullets">
+                <li><span class="exp-bullet-index">01</span><p>Resolved complex authentication failures across Cloudpath, RADIUS/802.1X, and Ruckus SmartZone for 2,700+ schools nationwide — reducing escalation resolution time by eliminating recurring EAP, certificate chain, and RADIUS timeout issues that had no documented fix path.</p></li>
+                <li><span class="exp-bullet-index">02</span><p>Designed and deployed API-driven identity integrations across Azure Entra ID, Microsoft Intune, Google Workspace, and JAMF Pro — enabling automated device and identity metadata ingestion at national scale, removing manual provisioning bottlenecks across a distributed school network.</p></li>
+                <li><span class="exp-bullet-index">03</span><p>Secured Wi-Fi onboarding for thousands of school devices by configuring and optimising Cloudpath for certificate-based authentication, replacing legacy credential-based access and reducing identity mapping errors across integrated firewall environments.</p></li>
+                <li><span class="exp-bullet-index">04</span><p>Hardened network access control by configuring Palo Alto and Fortigate firewalls with granular User-ID policies, NAT rules, and LDAP-integrated threat prevention — aligning school-level access to student identity frameworks defined by the Ministry of Education NZ.</p></li>
+                <li><span class="exp-bullet-index">05</span><p>Managed multi-platform MDM deployments across Jamf Pro, Intune, and Google Workspace for iOS, macOS, Windows, ChromeOS, and Android fleets — including Apple DEP/ADE enrolment and Apple TV provisioning — standardising device configuration across the national school estate.</p></li>
+                <li><span class="exp-bullet-index">06</span><p>Built KPI compliance frameworks aligned to Ministry of Education NZ requirements, delivering structured national-scale reporting that improved SLA transparency and partner accountability across a large, distributed ICT partner base.</p></li>
+                <li><span class="exp-bullet-index">07</span><p>Elevated technical capability across delivery teams by mentoring engineers and ICT partners through structured training and troubleshooting guidance, translating complex network and security concepts into actionable operational knowledge.</p></li>
+                <li><span class="exp-bullet-index">08</span><p>Accelerated wireless deployment quality by configuring Ruckus SmartZone controllers and resolving SSID, RF interference, and roaming issues at scale — improving first-contact resolution rates for school Wi-Fi incidents.</p></li>
+                <li><span class="exp-bullet-index">09</span><p>Served as the primary escalation point for N4L Customer Support and Network Management teams on complex faults across N4L products — owning end-to-end resolution for critical school incidents, including after-hours Problem Management escalation to maintain national service continuity.</p></li>
+                <li><span class="exp-bullet-index">10</span><p>Accelerated school connectivity by authoring technical designs, Statements of Work, and network diagrams for customer onboarding — reducing provisioning ambiguity and supporting Service Delivery Specialists through complex solution handoffs.</p></li>
+                <li><span class="exp-bullet-index">11</span><p>Led the transition of all schools to the Managed Network by taking a principal delivery role in provisioning, coordinating with ICT partners and vendors, and resolving escalated provisioning issues to keep the programme on track at national scale.</p></li>
+                <li><span class="exp-bullet-index">12</span><p>Improved filtering and security consistency across the entire N4L network by maintaining and enforcing default firewall and filtering policies — ensuring uniform protection baselines across thousands of school sites with no site-by-site drift.</p></li>
+                <li><span class="exp-bullet-index">13</span><p>Reduced repeat faults and partner knowledge gaps by building and maintaining a structured technical knowledge base, developing standardised solution templates, and delivering training to internal operations teams, schools, and ICT partners.</p></li>
+                <li><span class="exp-bullet-index">14</span><p>Delivered pre-sales technical services to N4L customers by scoping solutions, presenting technical options, and supporting the promotion of N4L products — bridging the gap between commercial opportunity and viable delivery.</p></li>
+                <li><span class="exp-bullet-index">15</span><p>Proactively identified and surfaced risk associated with complex solution installations, playing an active role in change control processes to protect service stability and flag issues before they reached production.</p></li>
+                <li><span class="exp-bullet-index">16</span><p>Strengthened vendor and partner relationships by working collaboratively with third-party ICT providers to resolve faults — including on-site school visits where standard remote processes were insufficient, going beyond role scope to ensure student connectivity was restored.</p></li>
+                <li><span class="exp-bullet-index">17</span><p>Contributed to a positive, high-performing team culture by engaging across Customer and Product teams to share knowledge, escalate risks early, and foster a working environment focused on delivering real outcomes for schools and students.</p></li>
+              </ol>
+            </div>
+          </div>
         </div>
-        <h3 class="timeline-role">Solution Architect — Delivery Team Security</h3>
-        <p class="timeline-subtitle">Network for Learning (N4L) — Crown-owned digital services provider for NZ schools</p>
-        <ul class="timeline-bullets">
-          <li>Resolved complex authentication failures across Cloudpath, RADIUS/802.1X, and Ruckus SmartZone for 2,700+ schools nationwide — reducing escalation resolution time by eliminating recurring EAP, certificate chain, and RADIUS timeout issues that had no documented fix path.</li>
-          <li>Designed and deployed API-driven identity integrations across Azure Entra ID, Microsoft Intune, Google Workspace, and JAMF Pro — enabling automated device and identity metadata ingestion at national scale, removing manual provisioning bottlenecks across a distributed school network.</li>
-          <li>Secured Wi-Fi onboarding for thousands of school devices by configuring and optimising Cloudpath for certificate-based authentication, replacing legacy credential-based access and reducing identity mapping errors across integrated firewall environments.</li>
-          <li>Hardened network access control by configuring Palo Alto and Fortigate firewalls with granular User-ID policies, NAT rules, and LDAP-integrated threat prevention — aligning school-level access to student identity frameworks defined by the Ministry of Education NZ.</li>
-          <li>Managed multi-platform MDM deployments across Jamf Pro, Intune, and Google Workspace for iOS, macOS, Windows, ChromeOS, and Android fleets — including Apple DEP/ADE enrolment and Apple TV provisioning — standardising device configuration across the national school estate.</li>
-          <li>Built KPI compliance frameworks aligned to Ministry of Education NZ requirements, delivering structured national-scale reporting that improved SLA transparency and partner accountability across a large, distributed ICT partner base.</li>
-          <li>Elevated technical capability across delivery teams by mentoring engineers and ICT partners through structured training and troubleshooting guidance, translating complex network and security concepts into actionable operational knowledge.</li>
-          <li>Accelerated wireless deployment quality by configuring Ruckus SmartZone controllers and resolving SSID, RF interference, and roaming issues at scale — improving first-contact resolution rates for school Wi-Fi incidents.</li>
-          <li>Served as the primary escalation point for N4L Customer Support and Network Management teams on complex faults across N4L products — owning end-to-end resolution for critical school incidents, including after-hours Problem Management escalation to maintain national service continuity.</li>
-          <li>Accelerated school connectivity by authoring technical designs, Statements of Work, and network diagrams for customer onboarding — reducing provisioning ambiguity and supporting Service Delivery Specialists through complex solution handoffs.</li>
-          <li>Led the transition of all schools to the Managed Network by taking a principal delivery role in provisioning, coordinating with ICT partners and vendors, and resolving escalated provisioning issues to keep the programme on track at national scale.</li>
-          <li>Improved filtering and security consistency across the entire N4L network by maintaining and enforcing default firewall and filtering policies — ensuring uniform protection baselines across thousands of school sites with no site-by-site drift.</li>
-          <li>Reduced repeat faults and partner knowledge gaps by building and maintaining a structured technical knowledge base, developing standardised solution templates, and delivering training to internal operations teams, schools, and ICT partners.</li>
-          <li>Delivered pre-sales technical services to N4L customers by scoping solutions, presenting technical options, and supporting the promotion of N4L products — bridging the gap between commercial opportunity and viable delivery.</li>
-          <li>Proactively identified and surfaced risk associated with complex solution installations, playing an active role in change control processes to protect service stability and flag issues before they reached production.</li>
-          <li>Strengthened vendor and partner relationships by working collaboratively with third-party ICT providers to resolve faults — including on-site school visits where standard remote processes were insufficient, going beyond role scope to ensure student connectivity was restored.</li>
-          <li>Contributed to a positive, high-performing team culture by engaging across Customer and Product teams to share knowledge, escalate risks early, and foster a working environment focused on delivering real outcomes for schools and students.</li>
-		</ul>
       </article>
 
-      <article class="timeline-item fade-up">
-        <div class="timeline-dot" aria-hidden="true"></div>
-        <div class="timeline-meta">
-          <span class="timeline-period">Jan 2021 – Feb 2025</span>
-          <span class="timeline-company">Dell Technologies · GCC</span>
+      <!-- ROLE 2 — Dell Technologies -->
+      <article class="exp-card fade-up" data-tenure="68">
+        <div class="exp-node" aria-hidden="true"><span class="exp-node-ring"></span><span class="exp-node-dot"></span></div>
+        <div class="exp-card-inner">
+          <header class="exp-card-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-2">
+            <div class="exp-head-top">
+              <div class="exp-period-group">
+                <span class="exp-period">Jan 2021 – Feb 2025</span>
+                <span class="exp-tenure-track" title="4 years 1 month"><span class="exp-tenure-fill"></span></span>
+              </div>
+            </div>
+            <h3 class="exp-role">Advisory Solution Architect</h3>
+            <div class="exp-company-line">
+              <span class="exp-company">Dell Technologies</span>
+              <span class="exp-loc">Middle East, Turkey & Africa · Government, Financial Services & Energy</span>
+            </div>
+            <p class="exp-subtitle">Led enterprise architecture engagements across regulated sectors, turning risk and cost data into decisions leadership could act on.</p>
+            <div class="exp-metrics">
+              <div class="exp-metric"><span class="exp-metric-num">4+ Yrs</span><span class="exp-metric-label">In Region Tenure</span></div>
+              <div class="exp-metric"><span class="exp-metric-num">META</span><span class="exp-metric-label">Multi-Country Coverage</span></div>
+              <div class="exp-metric"><span class="exp-metric-num">3</span><span class="exp-metric-label">Regulated Sectors</span></div>
+            </div>
+            <div class="exp-stack">
+              <span class="exp-chip">Risk & Governance Frameworks</span><span class="exp-chip">RCA / Business Continuity</span><span class="exp-chip">Cost-Benefit Analysis</span><span class="exp-chip">Workload Migration</span><span class="exp-chip">Vendor & Contract Management</span><span class="exp-chip">Compliance Governance</span>
+            </div>
+            <span class="exp-toggle" aria-hidden="true">
+              <span class="exp-toggle-label-closed">View all 10 responsibilities</span>
+              <span class="exp-toggle-label-open">Collapse</span>
+              <svg class="exp-toggle-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </header>
+          <div class="exp-body" id="exp-body-2">
+            <div class="exp-body-inner">
+              <ol class="exp-bullets">
+                <li><span class="exp-bullet-index">01</span><p>Drove on-time delivery of IT programmes across government, financial services, and energy clients in the META region by leading cross-functional teams, managing project roadmaps, and enforcing milestone accountability — maintaining SLA compliance across complex, multi-vendor environments.</p></li>
+                <li><span class="exp-bullet-index">02</span><p>Reduced organisational risk exposure by implementing proactive incident and risk management frameworks, cutting service disruption impact through structured RCA, escalation protocols, and business continuity planning.</p></li>
+                <li><span class="exp-bullet-index">03</span><p>Strengthened executive decision-making by producing cost-benefit analyses, scenario impact assessments, and architecture governance reports — giving senior leadership data-backed justification for platform and investment decisions.</p></li>
+                <li><span class="exp-bullet-index">04</span><p>Delivered workload migration programmes end-to-end — from milestone planning and operational readiness through to post-migration warranty oversight — reducing cut-over risk and shortening time to stable production for enterprise clients.</p></li>
+                <li><span class="exp-bullet-index">05</span><p>Improved vendor and partner performance by negotiating contracts, defining governance standards, and coordinating third-party service delivery — optimising resource utilisation and reducing cost leakage across programme budgets.</p></li>
+                <li><span class="exp-bullet-index">06</span><p>Designed custom managed services architectures spanning cloud, storage, and networking — translating complex client requirements into commercially viable, delivery-ready solutions across government, financial services, and energy sectors in the META region.</p></li>
+                <li><span class="exp-bullet-index">07</span><p>Continuously assessed emerging IT trends and best practices to enhance service capabilities, automation, and cost-effectiveness across the technology and process landscape.</p></li>
+                <li><span class="exp-bullet-index">08</span><p>Ensured all IT services aligned with regulatory, security, and compliance standards, mitigating potential risk through structured compliance and security governance.</p></li>
+                <li><span class="exp-bullet-index">09</span><p>Produced cost-benefit analyses, scenario-based impact assessments, and architecture governance reporting to support executive decision-making at programme level.</p></li>
+                <li><span class="exp-bullet-index">10</span><p>Led workload migration programmes with milestone management, operational readiness planning, and post-migration warranty oversight to protect production stability.</p></li>
+              </ol>
+            </div>
+          </div>
         </div>
-        <h3 class="timeline-role">Advisory Solution Architect</h3>
-        <p class="timeline-subtitle">Enterprise Architecture · Government, Financial Services & Energy · Middle East, Turkey & Africa</p>
-        <ul class="timeline-bullets">
-		  <li>Drove on-time delivery of IT programmes across government, financial services, and energy clients in the META region by leading cross-functional teams, managing project roadmaps, and enforcing milestone accountability — maintaining SLA compliance across complex, multi-vendor environments.</li>
-          <li>Reduced organisational risk exposure by implementing proactive incident and risk management frameworks, cutting service disruption impact through structured RCA, escalation protocols, and business continuity planning.</li>
-          <li>Strengthened executive decision-making by producing cost-benefit analyses, scenario impact assessments, and architecture governance reports — giving senior leadership data-backed justification for platform and investment decisions.</li>
-          <li>Delivered workload migration programmes end-to-end — from milestone planning and operational readiness through to post-migration warranty oversight — reducing cut-over risk and shortening time to stable production for enterprise clients.</li>
-          <li>Improved vendor and partner performance by negotiating contracts, defining governance standards, and coordinating third-party service delivery — optimising resource utilisation and reducing cost leakage across programme budgets.</li>
-          <li>Designed custom managed services architectures spanning cloud, storage, and networking — translating complex client requirements into commercially viable, delivery-ready solutions across government, financial services, and energy sectors in the META region.</li>
-         <li>Technology & Process Innovation – Continuously assess emerging IT trends and best practices to enhance service capabilities, automation, and cost-effectiveness.</li>
-          <li>Compliance & Security Governance – Ensure all IT services align with regulatory, security, and compliance standards, mitigating potential risks.</li>
-          <li>Produced cost-benefit analyses, scenario-based impact assessments, and architecture governance reporting for executive decision-making.</li>
-          <li>Led workload migration programmes with milestone management, operational readiness planning, and post-migration warranty oversight.</li>
-        </ul>
       </article>
 
-      <article class="timeline-item fade-up">
-        <div class="timeline-dot" aria-hidden="true"></div>
-        <div class="timeline-meta">
-          <span class="timeline-period">Jan 2019 – Feb 2021</span>
-          <span class="timeline-company">VaporVM · Dubai</span>
+      <!-- ROLE 3 — VaporVM -->
+      <article class="exp-card fade-up" data-tenure="35">
+        <div class="exp-node" aria-hidden="true"><span class="exp-node-ring"></span><span class="exp-node-dot"></span></div>
+        <div class="exp-card-inner">
+          <header class="exp-card-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-3">
+            <div class="exp-head-top">
+              <div class="exp-period-group">
+                <span class="exp-period">Jan 2019 – Feb 2021</span>
+                <span class="exp-tenure-track" title="2 years 1 month"><span class="exp-tenure-fill"></span></span>
+              </div>
+            </div>
+            <h3 class="exp-role">Enterprise Solution Architect</h3>
+            <div class="exp-company-line">
+              <span class="exp-company">VaporVM</span>
+              <span class="exp-loc">Dubai, UAE · Cloud, M365 & Hybrid Architecture</span>
+            </div>
+            <p class="exp-subtitle">Built the standards and governance guardrails that let 30+ transformation projects ship without re-inventing the architecture each time.</p>
+            <div class="exp-metrics">
+              <div class="exp-metric"><span class="exp-metric-num">$16M+</span><span class="exp-metric-label">Pipeline Influenced</span></div>
+              <div class="exp-metric"><span class="exp-metric-num">30+</span><span class="exp-metric-label">Transformation Projects</span></div>
+              <div class="exp-metric"><span class="exp-metric-num">4</span><span class="exp-metric-label">Delivery Teams Aligned</span></div>
+            </div>
+            <div class="exp-stack">
+              <span class="exp-chip">VMware SDDC / vSAN / NSX</span><span class="exp-chip">VMware Aria / Tanzu</span><span class="exp-chip">Azure</span><span class="exp-chip">Google Cloud</span><span class="exp-chip">M365</span><span class="exp-chip">RFP & Pre-Sales</span>
+            </div>
+            <span class="exp-toggle" aria-hidden="true">
+              <span class="exp-toggle-label-closed">View all 6 responsibilities</span>
+              <span class="exp-toggle-label-open">Collapse</span>
+              <svg class="exp-toggle-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </header>
+          <div class="exp-body" id="exp-body-3">
+            <div class="exp-body-inner">
+              <ol class="exp-bullets">
+                <li><span class="exp-bullet-index">01</span><p>Contributed to a $16M+ solution pipeline by leading pre-sales architecture engagements, authoring RFP responses, and presenting at executive stakeholder workshops — converting technical capability into commercial opportunity for managed services and digital transformation deals.</p></li>
+                <li><span class="exp-bullet-index">02</span><p>Delivered 30+ hybrid cloud and M365 transformation projects by establishing platform standards, configuration patterns, and governance guardrails — reducing delivery variation and post-implementation rework across client environments.</p></li>
+                <li><span class="exp-bullet-index">03</span><p>Reduced architectural duplication and integration debt by defining organisation-wide architecture standards, principles, and reference patterns across application, cloud, and identity platforms.</p></li>
+                <li><span class="exp-bullet-index">04</span><p>Coordinated multi-disciplinary engineering delivery across Data, Cloud, Infrastructure, and Network teams — aligning solution preparation and validation to client governance requirements and post-implementation review gates.</p></li>
+                <li><span class="exp-bullet-index">05</span><p>Built client confidence in high-risk programmes (cloud migration, DR planning, capacity forecasting) by producing migration runbooks, architecture documentation, and operational readiness plans with formal governance sign-off.</p></li>
+                <li><span class="exp-bullet-index">06</span><p>Served as principal SME for VMware Enterprise Products — including SDDC, vSAN, NSX, Workspace ONE, vCloud, AVI, SRM, Aria Suite, and Tanzu — alongside Azure and GCP, across cloud transformation and lifecycle management engagements.</p></li>
+              </ol>
+            </div>
+          </div>
         </div>
-        <h3 class="timeline-role">Enterprise Solution Architect</h3>
-        <p class="timeline-subtitle">Cloud, M365 & Hybrid Architecture · End-to-End Transformation Projects</p>
-        <ul class="timeline-bullets">
-		  <li>Contributed to a $16M+ solution pipeline by leading pre-sales architecture engagements, authoring RFP responses, and presenting at executive stakeholder workshops — converting technical capability into commercial opportunity for managed services and digital transformation deals.</li>
-		  <li>Delivered 30+ hybrid cloud and M365 transformation projects by establishing platform standards, configuration patterns, and governance guardrails — reducing delivery variation and post-implementation rework across client environments.</li>
-		  <li>Reduced architectural duplication and integration debt by defining organisation-wide architecture standards, principles, and reference patterns across application, cloud, and identity platforms.</li>
-		  <li>Coordinated multi-disciplinary engineering delivery across Data, Cloud, Infrastructure, and Network teams — aligning solution preparation and validation to client governance requirements and post-implementation review gates.</li>
-		  <li>Built client confidence in high-risk programmes (cloud migration, DR planning, capacity forecasting) by producing migration runbooks, architecture documentation, and operational readiness plans with formal governance sign-off.</li>
-          <li>Principal SME for VMware Enterprise Products (i.e., SDDC, VSAN, NSX, WSONE, VCLOUD, AVI, SRM, Aria Suite, Tanzu) Azure and GCP in cloud transformation and lifecycle management engagements.</li>
-        </ul>
       </article>
 
-      <article class="timeline-item fade-up">
-        <div class="timeline-dot" aria-hidden="true"></div>
-        <div class="timeline-meta">
-          <span class="timeline-period">Aug 2017 – Dec 2018</span>
-          <span class="timeline-company">Jaffer Business Systems</span>
+      <!-- ROLE 4 — Jaffer Business Systems -->
+      <article class="exp-card fade-up" data-tenure="24">
+        <div class="exp-node" aria-hidden="true"><span class="exp-node-ring"></span><span class="exp-node-dot"></span></div>
+        <div class="exp-card-inner">
+          <header class="exp-card-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-4">
+            <div class="exp-head-top">
+              <div class="exp-period-group">
+                <span class="exp-period">Aug 2017 – Dec 2018</span>
+                <span class="exp-tenure-track" title="1 year 4 months"><span class="exp-tenure-fill"></span></span>
+              </div>
+            </div>
+            <h3 class="exp-role">Virtualization Specialist</h3>
+            <div class="exp-company-line">
+              <span class="exp-company">Jaffer Business Systems</span>
+              <span class="exp-loc">Karachi, Pakistan</span>
+            </div>
+            <p class="exp-subtitle">Delivered enterprise VMware infrastructure for banks, government, and FMCG clients across five hardware ecosystems.</p>
+            <div class="exp-metrics">
+              <div class="exp-metric"><span class="exp-metric-num">5</span><span class="exp-metric-label">Hardware Vendor Stacks</span></div>
+              <div class="exp-metric"><span class="exp-metric-num">Bank / Gov</span><span class="exp-metric-label">Client Sectors</span></div>
+            </div>
+            <div class="exp-stack">
+              <span class="exp-chip">VMware ESXi / vCenter</span><span class="exp-chip">HA / DR / SAN</span><span class="exp-chip">HPE ProLiant / 3PAR</span><span class="exp-chip">Dell PowerEdge / PowerStore</span><span class="exp-chip">Huawei OceanStor</span><span class="exp-chip">Hitachi Vantara</span><span class="exp-chip">Lenovo ThinkAgile</span>
+            </div>
+            <span class="exp-toggle" aria-hidden="true">
+              <span class="exp-toggle-label-closed">View all 8 responsibilities</span>
+              <span class="exp-toggle-label-open">Collapse</span>
+              <svg class="exp-toggle-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </header>
+          <div class="exp-body" id="exp-body-4">
+            <div class="exp-body-inner">
+              <ol class="exp-bullets">
+                <li><span class="exp-bullet-index">01</span><p>Delivered end-to-end VMware infrastructure for major banks, government institutions, and FMCG clients across Pakistan — deploying ESXi clusters, vCenter, HA/DR configurations, and SAN storage integration that met enterprise continuity and compliance standards.</p></li>
+                <li><span class="exp-bullet-index">02</span><p>Expanded enterprise virtualisation coverage by implementing VMware SDDC, VDI, NSX, VCF, and Workspace ONE environments, enabling clients to modernise infrastructure without disrupting mission-critical operations.</p></li>
+                <li><span class="exp-bullet-index">03</span><p>Collaborated with cross-functional teams to deliver integrated IT solutions that supported business continuity and disaster recovery strategies.</p></li>
+                <li><span class="exp-bullet-index">04</span><p>Worked across HPE ProLiant DL Series, BladeSystem, 3PAR StoreServ, StoreOnce, Virtual Connect (FlexFabric), and SimpliVity HCI hardware platforms.</p></li>
+                <li><span class="exp-bullet-index">05</span><p>Deployed on Dell Technologies PowerEdge Rack and Modular (MX740c, MX750c), PowerStore, PowerMax, Unity XT, PowerScale (Isilon), VxRail, and VxBlock infrastructure.</p></li>
+                <li><span class="exp-bullet-index">06</span><p>Implemented Huawei FusionServer Pro, OceanStor Dorado, OceanStor Hybrid V5/V6, and FusionCube HCI environments for enterprise clients.</p></li>
+                <li><span class="exp-bullet-index">07</span><p>Delivered Hitachi Vantara Advanced Server DS Series, UCP HC (vSAN HCI), and UCP CI (Cisco + Hitachi) converged infrastructure solutions.</p></li>
+                <li><span class="exp-bullet-index">08</span><p>Built on Lenovo ThinkSystem SR Series, ThinkAgile VX (vSAN), and ThinkAgile MX (Azure Stack HCI) platforms across client environments.</p></li>
+              </ol>
+            </div>
+          </div>
         </div>
-        <h3 class="timeline-role">Virtualization Specialist</h3>
-        <p class="timeline-subtitle">Karachi, Pakistan</p>
-        <ul class="timeline-bullets">
-          <li>Delivered end-to-end VMware infrastructure for major banks, government institutions, and FMCG clients across Pakistan — deploying ESXi clusters, vCenter, HA/DR configurations, and SAN storage integration that met enterprise continuity and compliance standards.</li>
-          <li>Expanded enterprise virtualisation coverage by implementing VMware SDDC, VDI, NSX, VCF, and Workspace ONE environments, enabling clients to modernise infrastructure without disrupting mission-critical operations.</li>
-          <li>Collaborated with cross-functional teams to deliver integrated IT solutions that supported business continuity and disaster recovery strategies.</li>
-          <li>Worked on major physical Hardware Technologies:</li>
-          <li>HPE	ProLiant DL Series, BladeSystem, 3PAR StoreServ, StoreOnce, Virtual Connect (FlexFabric) and SimpliVity HCI.</li>
-          <li>Dell Technologies	PowerEdge Rack, PowerEdge Modular (MX740c, MX750c), PowerStore, PowerMax, Unity XT, PowerScale (Isilon), VxRail and VxBlock.</li>
-          <li>Huawei FusionServer Pro, OceanStor Dorado, OceanStor Hybrid V5/V6, FusionCube HCI.</li>
-          <li>Hitachi Vantara Advanced Server DS Series, UCP HC (vSAN HCI), UCP CI (Cisco + Hitachi)</li>
-          <li>Lenovo ThinkSystem SR Series, ThinkSystem DG ThinkAgile VX (vSAN), MX (Azure Stack HCI)</li>		  
-        </ul>
       </article>
 
-      <article class="timeline-item dim fade-up">
-        <div class="timeline-dot" aria-hidden="true"></div>
-        <div class="timeline-meta">
-          <span class="timeline-period">2011 – 2017</span>
-          <span class="timeline-company" style="color:var(--text-muted);background:var(--bg-card)">Earlier Roles</span>
+      <!-- ROLE 5 — Earlier roles (aggregated, collapsed by default styling) -->
+      <article class="exp-card dim fade-up" data-tenure="100">
+        <div class="exp-node" aria-hidden="true"><span class="exp-node-ring"></span><span class="exp-node-dot"></span></div>
+        <div class="exp-card-inner">
+          <header class="exp-card-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-5">
+            <div class="exp-head-top">
+              <div class="exp-period-group">
+                <span class="exp-period">2011 – 2017</span>
+                <span class="exp-tenure-track" title="6 years across 4 employers"><span class="exp-tenure-fill"></span></span>
+              </div>
+            </div>
+            <h3 class="exp-role">System Engineer & Administrator</h3>
+            <div class="exp-company-line">
+              <span class="exp-company" style="color:var(--text-muted);background:var(--bg-card-alt)">Foundational Years</span>
+              <span class="exp-loc">Soneri Bank · Omrania & Associates · Liaquat National Hospital · Mobilink</span>
+            </div>
+            <p class="exp-subtitle">Where the infrastructure fundamentals were built, one 24/7 operations shift at a time.</p>
+            <div class="exp-metrics">
+              <div class="exp-metric"><span class="exp-metric-num">4</span><span class="exp-metric-label">Employers</span></div>
+              <div class="exp-metric"><span class="exp-metric-num">1,000+</span><span class="exp-metric-label">Users Supported</span></div>
+            </div>
+            <div class="exp-stack">
+              <span class="exp-chip">Windows Server</span><span class="exp-chip">Linux</span><span class="exp-chip">VMware SDDC</span><span class="exp-chip">Active Directory</span><span class="exp-chip">IBM / EMC Storage</span><span class="exp-chip">Veeam / NetApp Backup</span>
+            </div>
+            <span class="exp-toggle" aria-hidden="true">
+              <span class="exp-toggle-label-closed">View all 3 responsibilities</span>
+              <span class="exp-toggle-label-open">Collapse</span>
+              <svg class="exp-toggle-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </header>
+          <div class="exp-body" id="exp-body-5">
+            <div class="exp-body-inner">
+              <ol class="exp-bullets">
+                <li><span class="exp-bullet-index">01</span><p>Supported 24/7 enterprise infrastructure operations across environments with 1,000+ users.</p></li>
+                <li><span class="exp-bullet-index">02</span><p>Managed Windows Server, Linux, VMware SDDC, Active Directory, IBM and EMC storage, plus Veeam and NetApp backup systems.</p></li>
+                <li><span class="exp-bullet-index">03</span><p>Performed incident response, root-cause analysis, patching, performance tuning, and security compliance.</p></li>
+              </ol>
+            </div>
+          </div>
         </div>
-        <h3 class="timeline-role">System Engineer & Administrator</h3>
-        <p class="timeline-subtitle">Soneri Bank · Omrania & Associates · Liaquat National Hospital · Mobilink</p>
-        <ul class="timeline-bullets">
-          <li>Supported 24/7 enterprise infrastructure operations across environments with 1,000+ users.</li>
-          <li>Managed Windows Server, Linux, VMware SDDC, Active Directory, IBM and EMC Storages, and Veeam and Netapp Backup Systems.</li>
-          <li>Performed incident response, RCA, patching, performance tuning, and security compliance.</li>
-        </ul>
       </article>
 
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ SKILLS ══════════ -->
-<section id="skills" class="section" style="background:var(--bg-elevated)" aria-label="Skills">
-  <div class="container">
-    <div class="section-header fade-up">
-      <h4>03 / Skills</h4>
-      <h2>Core Competencies &<br/>Technical Expertise</h2>
-      <div class="gold-line"></div>
-    </div>
-    <div class="skills-grid stagger">
-      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🏛️</div><h3>Enterprise Architecture</h3><div class="skill-tags"><span class="skill-tag">TOGAF® v10</span><span class="skill-tag">Reference Architectures</span><span class="skill-tag">Architecture Governance</span><span class="skill-tag">Standards & Patterns</span><span class="skill-tag">Technology Roadmaps</span><span class="skill-tag">Lifecycle Management</span></div></div>
-      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">☁️</div><h3>Cloud & Platform</h3><div class="skill-tags"><span class="skill-tag">Azure</span><span class="skill-tag">AWS</span><span class="skill-tag">Google Cloud</span><span class="skill-tag">M365</span><span class="skill-tag">Azure Entra</span><span class="skill-tag">Intune</span><span class="skill-tag">Hybrid Cloud</span><span class="skill-tag">Google Workspace</span><span class="skill-tag">Power Platform</span></div></div>
-      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🔗</div><h3>Integration & API</h3><div class="skill-tags"><span class="skill-tag">API Design Patterns</span><span class="skill-tag">Integration Architecture</span><span class="skill-tag">API Management</span><span class="skill-tag">Github</span><span class="skill-tag">Identity Automation</span></div></div>
-      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🔐</div><h3>Security Architecture</h3><div class="skill-tags"><span class="skill-tag">Zero Trust</span><span class="skill-tag">NZISM</span><span class="skill-tag">Conditional Access</span><span class="skill-tag">DLP</span><span class="skill-tag">Sensitivity Labels</span><span class="skill-tag">SIEM / SCOM</span></div></div>
-      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🐳</div><h3>Infrastructure & DevOps</h3><div class="skill-tags"><span class="skill-tag">Kubernetes (CKA/CKAD)</span><span class="skill-tag">VMware</span><span class="skill-tag">Linux / RHCSA</span><span class="skill-tag">PowerShell</span><span class="skill-tag">Windows Server</span><span class="skill-tag">Nutanix</span></div></div>
-      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">📊</div><h3>Governance & Delivery</h3><div class="skill-tags"><span class="skill-tag">PMP</span><span class="skill-tag">ITIL v4</span><span class="skill-tag">Solution Assurance</span><span class="skill-tag">RFP Responses</span><span class="skill-tag">Vendor Management</span><span class="skill-tag">Technical Debt Reduction</span></div></div>
-      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🤖</div><h3>AI & Data Governance</h3><div class="skill-tags"><span class="skill-tag">AI Risk Frameworks</span><span class="skill-tag">Privacy-Preserving ML</span><span class="skill-tag">Copilot Governance</span><span class="skill-tag">CPUS Framework</span><span class="skill-tag">TAAGI Index</span></div></div>
-      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🛠️</div><h3>Tools & Platforms</h3><div class="skill-tags"><span class="skill-tag">JIRA</span><span class="skill-tag">Confluence</span><span class="skill-tag">Power BI</span><span class="skill-tag">Visio</span><span class="skill-tag">ELK & Kibana</span><span class="skill-tag">Grafana</span><span class="skill-tag">Zabix</span><span class="skill-tag">Salesforce</span><span class="skill-tag">SCCM</span><span class="skill-tag">Microsoft Project</span></div></div>
-      <div class="skill-card fade-up"><div class="skill-card-icon" aria-hidden="true">🤖️</div><h3>AI Tools & Platforms</h3><div class="skill-tags"><span class="skill-tag">Copilot</span><span class="skill-tag">ChatGPT</span><span class="skill-tag">Claude</span><span class="skill-tag">Gemni</span><span class="skill-tag">Antigravity</span><span class="skill-tag">CodeX</span><span class="skill-tag">Notion AI</span><span class="skill-tag">GitHub Copilot</span><span class="skill-tag">Azure AI Studio</span><span class="skill-tag">Microsoft Security Copilot</span></div></div>
-    
-	</div>
-  </div>
-</section>
-
-<!-- ══════════ PROJECTS ══════════ -->
-<section id="projects" class="section" aria-label="Notable projects">
-  <div class="container">
-    <div class="section-header fade-up">
-      <h4>04 / Notable Projects</h4>
-      <h2>Architecture Work &<br/>Key Initiatives</h2>
-      <div class="gold-line"></div>
-    </div>
-    <div class="projects-grid stagger">
-      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🏫</div><h3>National Identity & Device Integration — N4L</h3><p>Designed API-driven integrations across Azure Entra, Intune, Google Workspace, and JAMF Pro, enabling automated identity and device metadata ingestion for New Zealand schools at national scale.</p><div class="project-tags"><span class="project-tag">Azure Entra</span><span class="project-tag">API Architecture</span><span class="project-tag">Intune</span><span class="project-tag">JAMF Pro</span><span class="project-tag">Compliance</span></div></article>
-      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🏦</div><h3>Bank Infrastructure CAPEX/OPEX Strategy</h3><p>Authored a five-year CAPEX/OPEX strategy report benchmarked against enterprise architecture standards. Presented directly to C-level executives, informing multi-million-dollar infrastructure investment decisions.</p><div class="project-tags"><span class="project-tag">EA Standards</span><span class="project-tag">Financial Modeling</span><span class="project-tag">Executive Reporting</span><span class="project-tag">Banking</span></div></article>
-      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🛢️</div><h3>Cloud Governance for Oil & Gas Clients</h3><p>Developed enterprise governance frameworks for AI-enabled and cloud productivity tools in highly regulated environments. Influenced multi-million-dollar managed services decisions through architecture-led analysis.</p><div class="project-tags"><span class="project-tag">M365 Governance</span><span class="project-tag">Copilot Rollout</span><span class="project-tag">Risk Framework</span><span class="project-tag">Oil & Gas</span></div></article>
-      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🔬</div><h3>CPUS — Composite Privacy-Utility Score</h3><p>MIT research framework evaluating privacy-utility tradeoffs across generative models with dual-jurisdiction regulatory mapping to GDPR Recital 26 and NZ Privacy Act 2020 IPP10.</p><div class="project-tags"><span class="project-tag">AI Governance</span><span class="project-tag">Privacy ML</span><span class="project-tag">GDPR</span><span class="project-tag">NZ Privacy Act</span><span class="project-tag">Research</span></div></article>
-      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🌿</div><h3>TAAGI — Tikanga-Aligned AI Governance Index</h3><p>Original AI governance framework integrating Te Mana Raraunga principles for indigenous data sovereignty into enterprise AI risk assessment, complementing NIST AI RMF.</p><div class="project-tags"><span class="project-tag">AI Governance</span><span class="project-tag">Indigenous Data</span><span class="project-tag">Te Mana Raraunga</span><span class="project-tag">Research</span></div></article>
-      <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">⚡</div><h3>Hybrid Cloud Modernization — 30+ Projects</h3><p>Established platform standards, configuration patterns, and governance guardrails across 30+ hybrid cloud and M365 transformation projects. Defined architecture principles that reduced duplication.</p><div class="project-tags"><span class="project-tag">Hybrid Cloud</span><span class="project-tag">M365</span><span class="project-tag">Architecture Patterns</span><span class="project-tag">Migration</span></div></article>
     </div>
   </div>
 </section>
