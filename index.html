@@ -16,66 +16,80 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
 /* ═══════════════════════════════════════════════
    TOKENS — DARK (Default)
 ═══════════════════════════════════════════════ */
 :root,
 [data-theme="dark"] {
-  --bg-primary:   #06090F;
-  --bg-elevated:  #0B1120;
-  --bg-card:      #101828;
-  --bg-card-alt:  #141E33;
-  --border-subtle:#1C2A48;
-  --border-main:  #233256;
-  --text-faint:   #3B4F75;
-  --text-muted:   #5C7099;
-  --text-secondary:#94A3C3;
-  --text-primary: #CBD5E8;
-  --text-heading: #EDF1FA;
-  --accent:       #C9A84C;
-  --accent-bright:#E8CC6E;
-  --accent-dim:   rgba(201,168,76,0.12);
-  --accent-glow:  rgba(201,168,76,0.06);
-  --accent2:      #3D8ABF;
-  --accent2-dim:  rgba(61,138,191,0.12);
-  --r:            10px;
+  /* Deep petrol / ink — desaturated, low-glare */
+  --bg-primary:   #0E141A;
+  --bg-elevated:  #131B22;
+  --bg-card:      #18222B;
+  --bg-card-alt:  #1F2B35;
+  --border-subtle:#243240;
+  --border-main:  #33475A;
+  --text-faint:   #4B6274;
+  --text-muted:   #86A0B2;
+  --text-secondary:#B7C7D3;
+  --text-primary: #D6E1E8;
+  --text-heading: #EEF3F7;
+  /* Primary accent — soft teal (calm, technical, high legibility) */
+  --accent:       #6FC7B4;
+  --accent-bright:#96DECC;
+  --accent-dim:   rgba(111,199,180,0.12);
+  --accent-glow:  rgba(111,199,180,0.06);
+  /* Secondary — muted sky blue */
+  --accent2:      #7DA9D0;
+  --accent2-dim:  rgba(125,169,208,0.12);
+  /* Tertiary — warm sand (replaces brash gold; readable, warm) */
+  --accent3:      #D4B587;
+  --accent3-dim:  rgba(212,181,135,0.12);
+  /* Quaternary — sage */
+  --accent4:      #9BC9A6;
+  --accent4-dim:  rgba(155,201,166,0.12);
+  --r:            12px;
   --nav-h:        72px;
-  --shadow-sm:    0 2px 8px rgba(0,0,0,0.2);
-  --shadow-md:    0 8px 32px rgba(0,0,0,0.3);
-  --shadow-lg:    0 20px 60px rgba(0,0,0,0.45);
-  --shadow-glow:  0 0 40px rgba(201,168,76,0.08);
-  --nav-bg:       rgba(6,9,15,0.8);
-  --pc:           201,168,76;
-  --img-border:   rgba(201,168,76,0.25);
+  --shadow-sm:    0 2px 10px rgba(0,0,0,0.22);
+  --shadow-md:    0 10px 32px rgba(0,0,0,0.32);
+  --shadow-lg:    0 22px 60px rgba(0,0,0,0.42);
+  --shadow-glow:  0 0 44px rgba(111,199,180,0.10);
+  --nav-bg:       rgba(14,20,26,0.78);
+  --pc:           111,199,180;
+  --img-border:   rgba(111,199,180,0.28);
 }
 
 [data-theme="light"] {
-  --bg-primary:   #F6F7FB;
-  --bg-elevated:  #ECEEF5;
-  --bg-card:      #FFFFFF;
-  --bg-card-alt:  #F2F3F8;
-  --border-subtle:#DFE2EB;
-  --border-main:  #CDD2DF;
-  --text-faint:   #B0B7C9;
-  --text-muted:   #7E899F;
-  --text-secondary:#556078;
-  --text-primary: #3A4562;
-  --text-heading: #121928;
-  --accent:       #A68B2A;
-  --accent-bright:#C4A52E;
-  --accent-dim:   rgba(166,139,42,0.1);
-  --accent-glow:  rgba(166,139,42,0.04);
-  --accent2:      #2870A0;
-  --accent2-dim:  rgba(40,112,160,0.08);
-  --shadow-sm:    0 1px 4px rgba(0,0,0,0.04);
-  --shadow-md:    0 6px 24px rgba(0,0,0,0.06);
-  --shadow-lg:    0 16px 48px rgba(0,0,0,0.08);
-  --shadow-glow:  0 0 40px rgba(166,139,42,0.05);
-  --nav-bg:       rgba(246,247,251,0.85);
-  --pc:           166,139,42;
-  --img-border:   rgba(166,139,42,0.3);
+  /* Warm paper — softer than pure white, easier on the eyes */
+  --bg-primary:   #F5F1EA;
+  --bg-elevated:  #EDE8DE;
+  --bg-card:      #FFFDF8;
+  --bg-card-alt:  #F1ECE2;
+  --border-subtle:#E2DACC;
+  --border-main:  #CFC5B4;
+  --text-faint:   #B9B0A0;
+  --text-muted:   #7B7565;
+  --text-secondary:#4E5A63;
+  --text-primary: #2F3A44;
+  --text-heading: #14202A;
+  --accent:       #2E8E7C;
+  --accent-bright:#3DAA95;
+  --accent-dim:   rgba(46,142,124,0.10);
+  --accent-glow:  rgba(46,142,124,0.05);
+  --accent2:      #3B6E9E;
+  --accent2-dim:  rgba(59,110,158,0.08);
+  --accent3:      #A8823C;
+  --accent3-dim:  rgba(168,130,60,0.10);
+  --accent4:      #4A8663;
+  --accent4-dim:  rgba(74,134,99,0.08);
+  --shadow-sm:    0 1px 4px rgba(20,32,42,0.05);
+  --shadow-md:    0 8px 26px rgba(20,32,42,0.08);
+  --shadow-lg:    0 18px 50px rgba(20,32,42,0.10);
+  --shadow-glow:  0 0 44px rgba(46,142,124,0.08);
+  --nav-bg:       rgba(245,241,234,0.85);
+  --pc:           46,142,124;
+  --img-border:   rgba(46,142,124,0.30);
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -91,7 +105,7 @@ body{background:var(--bg-primary);color:var(--text-primary);font-family:'Inter',
 /* ─── PRELOADER ─── */
 #preloader{position:fixed;inset:0;background:var(--bg-primary);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:28px;transition:opacity .6s,visibility .6s}
 #preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.loader-logo{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.8rem;color:var(--text-heading);letter-spacing:-.03em}
+.loader-logo{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.8rem;color:var(--text-heading);letter-spacing:-.03em}
 .loader-logo span{color:var(--accent)}
 .loader-ring{width:44px;height:44px;border:3px solid var(--border-main);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -104,7 +118,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 [data-theme="light"] body::before{opacity:.18}
 
 /* ─── TYPOGRAPHY ─── */
-h1,h2,h3,h4{font-family:'Outfit',sans-serif;line-height:1.12}
+h1,h2,h3,h4{font-family:'Manrope',sans-serif;line-height:1.12}
 h1{font-size:clamp(2.8rem,6.5vw,5rem);font-weight:900;color:var(--text-heading);letter-spacing:-.04em}
 h2{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:700;color:var(--text-heading);letter-spacing:-.025em}
 h3{font-size:1.15rem;font-weight:600;color:var(--text-heading)}
@@ -133,7 +147,7 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.25)}
 
 .nav-inner{max-width:1140px;margin:0 auto;padding:0 28px;height:100%;display:flex;align-items:center;justify-content:space-between}
 
-.nav-logo{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:var(--text-heading);letter-spacing:-.02em;transition:color .3s}
+.nav-logo{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.15rem;color:var(--text-heading);letter-spacing:-.02em;transition:color .3s}
 .nav-logo span{color:var(--accent)}
 
 .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
@@ -214,12 +228,12 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.25)}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 
 /* Buttons */
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--accent),var(--accent-bright));color:#0A0E1A;font-family:'Outfit',sans-serif;font-weight:700;font-size:.88rem;padding:15px 30px;border-radius:var(--r);border:none;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);letter-spacing:.01em;position:relative;overflow:hidden;box-shadow:0 4px 16px rgba(var(--pc),.2)}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--accent),var(--accent-bright));color:#0A0E1A;font-family:'Manrope',sans-serif;font-weight:700;font-size:.88rem;padding:15px 30px;border-radius:var(--r);border:none;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);letter-spacing:.01em;position:relative;overflow:hidden;box-shadow:0 4px 16px rgba(var(--pc),.2)}
 .btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);transform:translateX(-110%);transition:transform .6s}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(var(--pc),.35)}
 .btn-primary:hover::before{transform:translateX(110%)}
 
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text-heading);font-family:'Outfit',sans-serif;font-weight:600;font-size:.88rem;padding:15px 30px;border-radius:var(--r);border:1px solid var(--border-main);cursor:pointer;transition:all .3s}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text-heading);font-family:'Manrope',sans-serif;font-weight:600;font-size:.88rem;padding:15px 30px;border-radius:var(--r);border:1px solid var(--border-main);cursor:pointer;transition:all .3s}
 .btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 24px rgba(var(--pc),.08)}
 
 /* ─── HERO PHOTO + STATS COLUMN ─── */
@@ -256,7 +270,7 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.25)}
 .stat-cell:first-child{border-radius:14px 0 0 14px}
 .stat-cell:last-child{border-radius:0 14px 14px 0}
 
-.stat-number{font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:4px}
+.stat-number{font-family:'Manrope',sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:4px}
 .stat-label{font-size:.65rem;color:var(--text-faint);line-height:1.25;letter-spacing:.02em}
 
 @media(max-width:960px){
@@ -342,7 +356,7 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.25)}
 .exp-status-badge{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid rgba(var(--pc),.25);padding:4px 11px;border-radius:100px;display:inline-flex;align-items:center;gap:6px;flex-shrink:0}
 .exp-status-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
 
-.exp-role{font-family:'Outfit',sans-serif;font-size:1.28rem;font-weight:700;color:var(--text-heading);margin-bottom:8px;letter-spacing:-.01em}
+.exp-role{font-family:'Manrope',sans-serif;font-size:1.28rem;font-weight:700;color:var(--text-heading);margin-bottom:8px;letter-spacing:-.01em}
 .exp-company-line{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;margin-bottom:10px}
 .exp-company{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);padding:3px 12px;background:var(--accent-dim);border-radius:6px;border:1px solid rgba(var(--pc),.15)}
 .exp-loc{font-size:.78rem;color:var(--text-faint)}
@@ -350,13 +364,13 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.25)}
 
 .exp-metrics{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
 .exp-metric{display:flex;flex-direction:column;gap:2px;padding:10px 16px;background:var(--bg-card-alt);border:1px solid var(--border-subtle);border-radius:10px;min-width:108px}
-.exp-metric-num{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:800;color:var(--accent);line-height:1}
+.exp-metric-num{font-family:'Manrope',sans-serif;font-size:1.15rem;font-weight:800;color:var(--accent);line-height:1}
 .exp-metric-label{font-size:.63rem;color:var(--text-faint);letter-spacing:.03em;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
 
 .exp-stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
 .exp-chip{font-family:'JetBrains Mono',monospace;font-size:.65rem;padding:4px 11px;background:var(--accent2-dim);border:1px solid rgba(61,138,191,.18);border-radius:6px;color:var(--accent2)}
 
-.exp-toggle{display:inline-flex;align-items:center;gap:9px;background:none;border:1px solid var(--border-main);color:var(--text-heading);font-family:'Outfit',sans-serif;font-weight:600;font-size:.8rem;padding:10px 18px;border-radius:100px;cursor:pointer;transition:all .3s}
+.exp-toggle{display:inline-flex;align-items:center;gap:9px;background:none;border:1px solid var(--border-main);color:var(--text-heading);font-family:'Manrope',sans-serif;font-weight:600;font-size:.8rem;padding:10px 18px;border-radius:100px;cursor:pointer;transition:all .3s}
 .exp-toggle:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
 .exp-toggle-chevron{transition:transform .35s cubic-bezier(.4,0,.2,1)}
 .exp-card.open .exp-toggle-chevron{transform:rotate(180deg)}
@@ -422,6 +436,61 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.25)}
 .project-tags{display:flex;flex-wrap:wrap;gap:6px}
 .project-tag{font-family:'JetBrains Mono',monospace;font-size:.64rem;padding:4px 10px;border-radius:6px;background:var(--accent2-dim);border:1px solid rgba(61,138,191,.15);color:var(--accent2);transition:all .2s}
 
+/* ── PROJECT ARCHIVE ── */
+.archive-divider{display:flex;align-items:center;gap:18px;margin:70px 0 44px}
+.archive-divider::before,.archive-divider::after{content:'';flex:1;height:1px;background:var(--border-subtle)}
+.archive-divider-label{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);white-space:nowrap}
+.archive-intro{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:30px}
+.archive-intro h3{font-family:'Manrope',sans-serif;font-size:1.4rem;font-weight:700;color:var(--text-heading);letter-spacing:-.01em;margin-bottom:8px}
+.archive-intro p{font-size:.87rem;color:var(--text-muted);max-width:520px}
+.archive-stats{display:flex;gap:28px;flex-wrap:wrap}
+.archive-stat{text-align:right}
+.archive-stat-num{display:block;font-family:'Manrope',sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1}
+.archive-stat-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint)}
+
+.archive-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.archive-filter-btn{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:9px 16px;border-radius:100px;border:1px solid var(--border-main);background:var(--bg-card);color:var(--text-muted);cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+.archive-filter-btn:hover{border-color:var(--accent);color:var(--accent)}
+.archive-filter-btn.active{border-color:transparent;color:#0A0E1A;background:linear-gradient(135deg,var(--accent),var(--accent-bright));box-shadow:0 4px 14px rgba(var(--pc),.25)}
+.archive-filter-count{font-size:.62rem;opacity:.75;background:rgba(255,255,255,.12);padding:1px 6px;border-radius:20px}
+.archive-filter-btn.active .archive-filter-count{background:rgba(10,14,26,.18)}
+
+.archive-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+.archive-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:14px;overflow:hidden;transition:border-color .3s,transform .3s,box-shadow .3s;opacity:0;transform:translateY(14px);animation:archiveIn .5s cubic-bezier(.4,0,.2,1) forwards}
+.archive-card.is-hidden{display:none}
+@keyframes archiveIn{to{opacity:1;transform:translateY(0)}}
+.archive-card:hover{border-color:var(--border-main);box-shadow:var(--shadow-md)}
+.archive-card[open]{border-color:rgba(var(--pc),.3)}
+.archive-head{list-style:none;cursor:pointer;padding:20px 22px;position:relative;-webkit-tap-highlight-color:transparent}
+.archive-head::-webkit-details-marker{display:none}
+.archive-head::marker{content:''}
+.archive-top-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.archive-period{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.02em;color:var(--text-faint)}
+.archive-cat{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:20px;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.archive-cat::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor}
+.archive-cat.cat-cloud{background:var(--accent2-dim);color:var(--accent2)}
+.archive-cat.cat-security{background:var(--accent-dim);color:var(--accent)}
+.archive-cat.cat-endpoint{background:var(--accent3-dim);color:var(--accent3)}
+.archive-cat.cat-backup{background:var(--accent4-dim);color:var(--accent4)}
+.archive-title{font-size:.95rem;font-weight:600;color:var(--text-heading);line-height:1.35;margin-bottom:6px;padding-right:20px}
+.archive-client{font-size:.78rem;color:var(--text-muted);margin-bottom:14px}
+.archive-badges{display:flex;flex-wrap:wrap;gap:7px}
+.archive-chevron{position:absolute;top:22px;right:20px;width:9px;height:9px;border-right:1.5px solid var(--text-faint);border-bottom:1.5px solid var(--text-faint);transform:rotate(45deg);transition:transform .3s}
+.archive-card[open] .archive-chevron{transform:rotate(-135deg);border-color:var(--accent)}
+.archive-body{padding:0 22px 22px}
+.archive-body p{font-size:.83rem;color:var(--text-secondary);line-height:1.75;margin-bottom:12px}
+.archive-body ul{padding-left:18px}
+.archive-body li{font-size:.82rem;color:var(--text-muted);line-height:1.65;margin-bottom:6px}
+
+.tech-badge{width:32px;height:32px;border-radius:8px;background:var(--bg-card-alt);border:1px solid var(--border-subtle);display:inline-flex;align-items:center;justify-content:center;position:relative;transition:transform .25s,border-color .25s;flex-shrink:0;cursor:default}
+.tech-badge:hover{transform:translateY(-3px);border-color:var(--border-main);z-index:2}
+.tech-badge svg{width:16px;height:16px;display:block}
+.tech-badge.is-text{font-family:'JetBrains Mono',monospace;font-size:.52rem;font-weight:700;letter-spacing:.01em;color:var(--accent2)}
+.tech-badge[data-tip]::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 9px);left:50%;transform:translateX(-50%) translateY(4px);background:var(--bg-elevated);color:var(--text-heading);font-family:'JetBrains Mono',monospace;font-size:.6rem;padding:5px 10px;border-radius:6px;border:1px solid var(--border-main);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:var(--shadow-md);z-index:5}
+.tech-badge[data-tip]::before{content:'';position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--border-main);opacity:0;transition:opacity .2s;z-index:5}
+.tech-badge[data-tip]:hover::after,.tech-badge[data-tip]:hover::before{opacity:1}
+.tech-badge[data-tip]:hover::after{transform:translateX(-50%) translateY(0)}
+
 /* ═══════════════════════════════════════════════
    EDUCATION
 ═══════════════════════════════════════════════ */
@@ -432,7 +501,7 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.25)}
 .edu-card.featured::before{content:'In Progress';position:absolute;top:18px;right:18px;font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--accent);background:var(--accent-dim);border:1px solid rgba(var(--pc),.25);padding:4px 10px;border-radius:100px;animation:pulse 2s ease-in-out infinite}
 .edu-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
 
-.edu-degree{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text-heading);margin-bottom:8px;line-height:1.3}
+.edu-degree{font-family:'Manrope',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text-heading);margin-bottom:8px;line-height:1.3}
 .edu-school{font-family:'JetBrains Mono',monospace;font-size:.76rem;color:var(--accent);margin-bottom:8px}
 .edu-location{font-size:.82rem;color:var(--text-faint)}
 
@@ -451,7 +520,7 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.25)}
 .achievements-list{display:flex;flex-direction:column;gap:18px}
 .achievement-item{background:var(--bg-card);border:1px solid var(--border-subtle);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:26px 30px;display:flex;gap:20px;align-items:flex-start;transition:all .35s cubic-bezier(.4,0,.2,1)}
 .achievement-item:hover{border-left-color:var(--accent-bright);background:var(--bg-card-alt);transform:translateX(6px);box-shadow:var(--shadow-md)}
-.achievement-num{font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:800;color:var(--accent);flex-shrink:0;margin-top:3px;width:28px}
+.achievement-num{font-family:'Manrope',sans-serif;font-size:.75rem;font-weight:800;color:var(--accent);flex-shrink:0;margin-top:3px;width:28px}
 .achievement-text{font-size:.94rem;color:var(--text-primary);line-height:1.7}
 
 /* ═══════════════════════════════════════════════
@@ -537,11 +606,29 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
 @media(max-width:600px){
   .section{padding:80px 0}
   .section-header{margin-bottom:44px}
-  .projects-grid,.skills-grid,.edu-grid,.certs-grid{grid-template-columns:1fr}
+  .projects-grid,.skills-grid,.edu-grid,.certs-grid,.archive-grid{grid-template-columns:1fr}
+  .archive-intro{align-items:flex-start}
+  .archive-stats{gap:20px}
 }
 </style>
 </head>
 <body>
+
+<!-- Tech-logo sprite (Simple Icons, CC0) — referenced via <use> in the Notable Projects archive -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+<defs>
+<symbol id="ic-vmware" viewBox="0 0 24 24"><path fill="#7B7B7B" d="M.5 10.1a.505.505 0 00-.197.048.497.497 0 00-.25.68l1.138 2.475c.179.38.38.592.721.592.342 0 .542-.22.72-.592l1.003-2.186a.144.144 0 01.144-.092.16.16 0 01.157.16v2.118a.535.535 0 101.066 0v-1.73a.531.531 0 01.566-.552.52.52 0 01.541.551v1.73a.531.531 0 00.53.593.539.539 0 00.535-.592v-1.73a.531.531 0 01.564-.552.52.52 0 01.543.551v1.73a.531.531 0 00.528.593.535.535 0 00.535-.592v-1.969a1.234 1.234 0 00-1.283-1.23 1.647 1.647 0 00-1.14.486 1.26 1.26 0 00-1.095-.483 1.807 1.807 0 00-1.074.483 1.287 1.287 0 00-.961-.483 1.177 1.177 0 00-1.158.786l-.729 1.716-.933-2.203.011-.004A.505.505 0 00.5 10.1zm18.43.06a.27.27 0 00-.266.274h.002v3.142a.27.27 0 10.535 0v-1.222c0-1.037.571-1.56 1.27-1.643a.266.266 0 00.238-.274.258.258 0 00-.266-.269 1.465 1.465 0 00-1.242.88v-.614a.266.266 0 00-.271-.274zm-6.735.008a.273.273 0 00-.25.217l-.912 2.627-.902-2.62a.28.28 0 00-.274-.22.266.266 0 00-.27.258.493.493 0 00.034.144l1.09 3.037.02-.007a.319.319 0 00.298.242.3.3 0 00.293-.242l.903-2.583.896 2.583a.3.3 0 00.293.242h.018a.319.319 0 00.293-.242l1.097-3.038a.512.512 0 00.033-.144.258.258 0 00-.265-.25.262.262 0 00-.258.209l-.918 2.63-.904-2.626a.285.285 0 00-.278-.217h-.025a.273.273 0 00-.012 0zm10.168.008a1.75 1.75 0 00-1.691 1.851 1.765 1.765 0 001.76 1.858l-.008.013a1.784 1.784 0 001.33-.539.228.228 0 00.082-.17.228.228 0 00-.379-.168 1.435 1.435 0 01-1.018.415 1.237 1.237 0 01-1.24-1.207h2.555a.247.247 0 00.246-.247c0-.945-.593-1.806-1.637-1.806zm-5.744.002a1.571 1.571 0 00-.158.006 2.384 2.384 0 00-1.078.205.22.22 0 00-.143.222.24.24 0 00.235.229.266.266 0 00.095-.024 1.822 1.822 0 01.834-.162c.691 0 1.07.334 1.07.979v.125a3.796 3.796 0 00-1.103-.15c-.892 0-1.52.4-1.52 1.16l-.003-.004c0 .736.671 1.117 1.34 1.117a1.575 1.575 0 001.298-.62v.343a.247.247 0 00.254.25.254.254 0 00.258-.262v-1.983a1.416 1.416 0 00-.379-1.046 1.571 1.571 0 00-1-.385zm5.719.43c.714 0 1.085.565 1.139 1.214h-2.278a1.222 1.222 0 011.139-1.215zm-5.885 1.382a3.75 3.75 0 011.057.153V12.49c0 .57-.539.973-1.2.973-.485 0-.904-.261-.904-.713 0-.467.375-.76 1.047-.76Z"/></symbol>
+<symbol id="ic-veeam" viewBox="0 0 24 24"><path fill="#00B336" d="M6.63 9.842c-1.104 0-2 .945-2 2.101v.108c0 1.322.846 2.038 1.974 2.1.051.007.108.007.16.007.435 0 .794-.115 1.195-.361.04-.023.201-.132.361-.338.132-.166.138-.411 0-.543-.2-.189-.412-.086-.595.074-.292.246-.516.442-1.1.442-.55 0-1.064-.316-1.19-.94 0-.023.01-.045.034-.045H8.16a.473.473 0 0 0 .47-.504c0-1.156-.894-2.1-1.999-2.1zm4.466 0c-1.1 0-1.996.945-1.996 2.101v.108c0 1.322.846 2.038 1.974 2.1.052.007.11.007.16.007.435 0 .795-.115 1.196-.361.04-.023.2-.132.361-.338.132-.166.137-.411 0-.543-.2-.189-.413-.086-.596.074-.292.246-.515.442-1.1.442-.549 0-1.063-.316-1.189-.94-.006-.023.01-.045.028-.045h2.691a.473.473 0 0 0 .47-.504c-.007-1.156-.9-2.1-1.999-2.1zm-6.89.04a.4.4 0 0 0-.344.223l-1.42 3.063c-.034.063-.062.11-.136.11-.075 0-.105-.047-.14-.11l-1.42-3.057a.38.38 0 0 0-.53-.177.428.428 0 0 0-.172.56l1.39 2.828.16.32a.8.8 0 0 0 .712.46.791.791 0 0 0 .709-.46l.16-.32 1.385-2.834a.423.423 0 0 0-.166-.56.376.376 0 0 0-.188-.045zm11.362 0a.762.762 0 0 0-.504.188.808.808 0 0 0-.207.27l-1.59 3.137c0 .005-.007.006-.007.01v.007a.434.434 0 0 0 .03.442c0 .005.005.006.005.01 0 .007.006.005.006.01a.372.372 0 0 0 .516.077s.005 0 .005-.006a.083.083 0 0 0 .024-.017l.015-.018.006-.006a.485.485 0 0 0 .076-.103l.057-.125.332-.7c.006-.017.028-.027.045-.027h1.484c.195 0 .354-.167.354-.379 0-.206-.159-.377-.354-.377h-1.099a.033.033 0 0 1-.03-.046l.08-.172.602-1.207v-.006s0-.006.006-.006c.011-.023.04-.108.098-.125.034-.012.063-.012.086 0 .063.017.084.091.113.148l1.455 3.022a.393.393 0 0 0 .48.195s.006 0 .006-.006l.035-.017c.006 0 .007-.006.012-.006 0 0 .006 0 .006-.006.006 0 .006-.006.012-.006s.01-.004.01-.01c.006 0 .006-.006.011-.006.006-.006.012-.012.018-.012l.017-.017.006-.006a.408.408 0 0 0 .092-.498l-1.598-3.154a.79.79 0 0 0-.709-.45zm3.508 0c-.39 0-.709.332-.709.778v3.018c0 .183.104.354.264.406.263.086.486-.143.486-.412l-.058-2.938a.03.03 0 0 1 .052-.017l1.442 2.93c.137.28.367.449.625.449.257 0 .49-.167.623-.448l1.449-2.935c.01-.029.05-.019.05.016l-.056 2.955c0 .234.177.423.389.412.206-.006.367-.207.367-.43V10.66c.01-.452-.31-.77-.7-.777a.684.684 0 0 0-.61.394c-.361.739-1.426 2.93-1.426 2.936-.006.01-.03.064-.075.064-.04 0-.068-.047-.074-.064-.35-.727-1.047-2.164-1.408-2.908-.143-.287-.38-.422-.63-.422zm-12.45.647c.697 0 1.14.527 1.208 1.145 0 .023-.012.045-.035.045H5.47c-.023-.006-.033-.022-.033-.045.074-.607.49-1.145 1.19-1.145zm4.47 0h.002c.697.001 1.138.527 1.207 1.145 0 .023-.013.045-.035.045H9.94c-.023-.006-.04-.022-.034-.045.075-.606.493-1.144 1.19-1.145z"/></symbol>
+<symbol id="ic-cisco" viewBox="0 0 24 24"><path fill="#1BA0D7" d="M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206 2.08 2.08 0 00-.74.571 2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M20.117 10.728a.522.522 0 001.041 0V8.139a.521.521 0 00-1.04 0v2.589M17.231 11.771a.521.521 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M14.393 10.728a.521.521 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M11.494 10.728a.522.522 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M8.624 10.728a.52.52 0 001.039 0V8.139a.52.52 0 00-1.039 0v2.589M5.737 11.771a.52.52 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M2.876 10.728a.522.522 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M0 10.728a.521.521 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155"/></symbol>
+<symbol id="ic-kubernetes" viewBox="0 0 24 24"><path fill="#326CE5" d="M10.204 14.35l.007.01-.999 2.413a5.171 5.171 0 0 1-2.075-2.597l2.578-.437.004.005a.44.44 0 0 1 .484.606zm-.833-2.129a.44.44 0 0 0 .173-.756l.002-.011L7.585 9.7a5.143 5.143 0 0 0-.73 3.255l2.514-.725.002-.009zm1.145-1.98a.44.44 0 0 0 .699-.337l.01-.005.15-2.62a5.144 5.144 0 0 0-3.01 1.442l2.147 1.523.004-.002zm.76 2.75l.723.349.722-.347.18-.78-.5-.623h-.804l-.5.623.179.779zm1.5-3.095a.44.44 0 0 0 .7.336l.008.003 2.134-1.513a5.188 5.188 0 0 0-2.992-1.442l.148 2.615.002.001zm10.876 5.97l-5.773 7.181a1.6 1.6 0 0 1-1.248.594l-9.261.003a1.6 1.6 0 0 1-1.247-.596l-5.776-7.18a1.583 1.583 0 0 1-.307-1.34L2.1 5.573c.108-.47.425-.864.863-1.073L11.305.513a1.606 1.606 0 0 1 1.385 0l8.345 3.985c.438.209.755.604.863 1.073l2.062 8.955c.108.47-.005.963-.308 1.34zm-3.289-2.057c-.042-.01-.103-.026-.145-.034-.174-.033-.315-.025-.479-.038-.35-.037-.638-.067-.895-.148-.105-.04-.18-.165-.216-.216l-.201-.059a6.45 6.45 0 0 0-.105-2.332 6.465 6.465 0 0 0-.936-2.163c.052-.047.15-.133.177-.159.008-.09.001-.183.094-.282.197-.185.444-.338.743-.522.142-.084.273-.137.415-.242.032-.024.076-.062.11-.089.24-.191.295-.52.123-.736-.172-.216-.506-.236-.745-.045-.034.027-.08.062-.111.088-.134.116-.217.23-.33.35-.246.25-.45.458-.673.609-.097.056-.239.037-.303.033l-.19.135a6.545 6.545 0 0 0-4.146-2.003l-.012-.223c-.065-.062-.143-.115-.163-.25-.022-.268.015-.557.057-.905.023-.163.061-.298.068-.475.001-.04-.001-.099-.001-.142 0-.306-.224-.555-.5-.555-.275 0-.499.249-.499.555l.001.014c0 .041-.002.092 0 .128.006.177.044.312.067.475.042.348.078.637.056.906a.545.545 0 0 1-.162.258l-.012.211a6.424 6.424 0 0 0-4.166 2.003 8.373 8.373 0 0 1-.18-.128c-.09.012-.18.04-.297-.029-.223-.15-.427-.358-.673-.608-.113-.12-.195-.234-.329-.349-.03-.026-.077-.062-.111-.088a.594.594 0 0 0-.348-.132.481.481 0 0 0-.398.176c-.172.216-.117.546.123.737l.007.005.104.083c.142.105.272.159.414.242.299.185.546.338.743.522.076.082.09.226.1.288l.16.143a6.462 6.462 0 0 0-1.02 4.506l-.208.06c-.055.072-.133.184-.215.217-.257.081-.546.11-.895.147-.164.014-.305.006-.48.039-.037.007-.09.02-.133.03l-.004.002-.007.002c-.295.071-.484.342-.423.608.061.267.349.429.645.365l.007-.001.01-.003.129-.029c.17-.046.294-.113.448-.172.33-.118.604-.217.87-.256.112-.009.23.069.288.101l.217-.037a6.5 6.5 0 0 0 2.88 3.596l-.09.218c.033.084.069.199.044.282-.097.252-.263.517-.452.813-.091.136-.185.242-.268.399-.02.037-.045.095-.064.134-.128.275-.034.591.213.71.248.12.556-.007.69-.282v-.002c.02-.039.046-.09.062-.127.07-.162.094-.301.144-.458.132-.332.205-.68.387-.897.05-.06.13-.082.215-.105l.113-.205a6.453 6.453 0 0 0 4.609.012l.106.192c.086.028.18.042.256.155.136.232.229.507.342.84.05.156.074.295.145.457.016.037.043.09.062.129.133.276.442.402.69.282.247-.118.341-.435.213-.71-.02-.039-.045-.096-.065-.134-.083-.156-.177-.261-.268-.398-.19-.296-.346-.541-.443-.793-.04-.13.007-.21.038-.294-.018-.022-.059-.144-.083-.202a6.499 6.499 0 0 0 2.88-3.622c.064.01.176.03.213.038.075-.05.144-.114.28-.104.266.039.54.138.87.256.154.06.277.128.448.173.036.01.088.019.13.028l.009.003.007.001c.297.064.584-.098.645-.365.06-.266-.128-.537-.423-.608zM16.4 9.701l-1.95 1.746v.005a.44.44 0 0 0 .173.757l.003.01 2.526.728a5.199 5.199 0 0 0-.108-1.674A5.208 5.208 0 0 0 16.4 9.7zm-4.013 5.325a.437.437 0 0 0-.404-.232.44.44 0 0 0-.372.233h-.002l-1.268 2.292a5.164 5.164 0 0 0 3.326.003l-1.27-2.296h-.01zm1.888-1.293a.44.44 0 0 0-.27.036.44.44 0 0 0-.214.572l-.003.004 1.01 2.438a5.15 5.15 0 0 0 2.081-2.615l-2.6-.44-.004.005z"/></symbol>
+<symbol id="ic-kaspersky" viewBox="0 0 24 24"><path fill="#006D5C" d="M10.812 12.014c0 .91-.555 1.34-1.25 1.34h-.424v-.546h.392c.419 0 .698-.226.698-.794 0-.563-.264-.844-.71-.844-.43 0-.738.265-.738.833v2.282H8.2v-3.589h.58v.309h.082a.94.94 0 0 1 .776-.375c.64 0 1.174.463 1.174 1.384zm-3.804-.237l-.386-.039c-.304-.027-.464-.11-.464-.287 0-.21.204-.33.497-.33.303 0 .496.143.512.347h.557c-.022-.518-.424-.838-1.064-.838-.645 0-1.08.342-1.08.843 0 .42.264.69.865.75l.392.039c.237.022.397.072.397.298 0 .204-.15.352-.54.352-.361 0-.539-.163-.601-.382H5.49c.06.5.481.89 1.203.89.678 0 1.12-.359 1.12-.888 0-.469-.31-.706-.805-.755zm6.047.753c-.091.208-.308.366-.616.366-.425 0-.739-.276-.739-.871 0-.568.292-.882.744-.882.403 0 .634.242.657.606h-1.043v.42h1.61v-.277c0-.766-.507-1.262-1.23-1.262-.672 0-1.317.457-1.317 1.395 0 .937.645 1.395 1.318 1.395.615 0 1.054-.38 1.19-.89zm-9.127-1.9c-.634 0-1.108.33-1.163.838h.623c.044-.188.215-.325.54-.325.42 0 .557.22.557.49v.91c-.237.27-.513.397-.788.397-.287 0-.486-.138-.486-.386 0-.237.155-.386.452-.386h.464v-.419h-.48c-.662 0-1.031.331-1.031.838 0 .474.358.833.948.833.331 0 .623-.133.838-.292h.083v.226h.579v-1.776c0-.656-.447-.948-1.136-.948zM0 13.354h.579v-3.64H0zm2.432-2.658h-.706l-.844 1.108v.348l.866 1.202h.717L1.45 11.975zm20.928 0l-.474 1.053c-.116.254-.226.502-.259.667h-.083c-.033-.165-.148-.408-.264-.661l-.474-1.059h-.64l1.114 2.387-.552 1.202h.618L24 10.696zm-2.322 0h-.706l-.843 1.108v.348l.865 1.202h.717l-1.015-1.379zm-3.625 1.08l-.386-.038c-.303-.027-.463-.11-.463-.287 0-.21.204-.33.496-.33.303 0 .496.143.513.347h.557c-.022-.518-.425-.838-1.064-.838-.645 0-1.081.342-1.081.843 0 .42.265.69.866.75l.391.039c.237.022.397.072.397.298 0 .204-.149.352-.54.352-.36 0-.538-.163-.6-.382h-.603c.06.5.481.89 1.203.89.678 0 1.12-.359 1.12-.888 0-.469-.31-.706-.806-.755zm1.193 1.578h.58v-3.64h-.58zm-3.817-2.35h-.083v-.308h-.579v2.658h.579v-1.39c0-.474.219-.75.65-.75h.367v-.584h-.212c-.4 0-.57.15-.722.375z"/></symbol>
+<symbol id="ic-dell" viewBox="0 0 24 24"><path fill="#0076CE" d="M17.963 14.6V9.324h1.222v4.204h2.14v1.07h-3.362zm-9.784-3.288l2.98-2.292c.281.228.56.458.841.687l-2.827 2.14.611.535 2.827-2.216c.281.228.56.458.841.688a295.83 295.83 0 0 1-2.827 2.216l.61.536 2.83-2.295-.001-1.986h1.223v4.204h2.216v1.07h-3.362v-1.987c-.995.763-1.987 1.529-2.981 2.292l-2.981-2.292c-.144.729-.653 1.36-1.312 1.694-.285.147-.597.24-.915.276-.183.022-.367.017-.551.017H3.516V9.325H5.69a2.544 2.544 0 0 1 1.563.557c.454.36.778.872.927 1.43m-3.516-.917v3.21l.953-.001a1.377 1.377 0 0 0 1.036-.523 1.74 1.74 0 0 0 .182-1.889 1.494 1.494 0 0 0-.976-.766c-.166-.04-.338-.03-.507-.032h-.688zM11.82 0h.337a11.94 11.94 0 0 1 5.405 1.373 12.101 12.101 0 0 1 4.126 3.557A11.93 11.93 0 0 1 24 11.82v.36a11.963 11.963 0 0 1-3.236 8.033A11.967 11.967 0 0 1 12.182 24h-.361a11.993 11.993 0 0 1-4.145-.806 12.04 12.04 0 0 1-4.274-2.836A12.057 12.057 0 0 1 .576 15.67 12.006 12.006 0 0 1 0 12.181v-.361a11.924 11.924 0 0 1 1.992-6.396 12.211 12.211 0 0 1 4.71-4.172A11.875 11.875 0 0 1 11.82 0m-.153 1.23a10.724 10.724 0 0 0-6.43 2.375 10.78 10.78 0 0 0-3.319 4.573 10.858 10.858 0 0 0 .193 8.12 10.788 10.788 0 0 0 3.546 4.421 10.698 10.698 0 0 0 4.786 1.946c1.456.209 2.955.124 4.376-.26a10.756 10.756 0 0 0 5.075-3.062 10.742 10.742 0 0 0 2.686-5.28 10.915 10.915 0 0 0-.122-4.682 10.77 10.77 0 0 0-7.098-7.626 10.78 10.78 0 0 0-3.693-.525z"/></symbol>
+<symbol id="ic-hp" viewBox="0 0 24 24"><path fill="#0096D6" d="M12.0069 24h-.3572l2.459-6.7453h3.3796c.5907 0 1.2364-.4533 1.4424-1.0166l2.6652-7.3085c.4396-1.1952-.2473-2.1706-1.525-2.1706h-4.6983l-3.929 10.798-2.2255 6.127C3.929 22.434 0 17.6806 0 12.007 0 6.498 3.7092 1.8546 8.7647.4396L6.4705 6.759 2.6514 17.2547h2.5415L8.4488 8.339h1.9095l-3.2558 8.9158H9.644l3.0223-8.3251c.4396-1.1952-.2473-2.1706-1.525-2.1706h-2.143l2.459-6.7453C11.636 0 11.8145 0 11.9931 0 18.6285 0 24 5.3715 24 12.007c.0137 6.6216-5.3578 11.993-11.9931 11.993zM19.2742 8.325h-1.9096l-2.6789 7.336h1.9096l2.6789-7.336z"/></symbol>
+<symbol id="ic-elasticsearch" viewBox="0 0 24 24"><path fill="#00A9E5" d="M13.394 0C8.683 0 4.609 2.716 2.644 6.667h15.641a4.77 4.77 0 0 0 3.073-1.11c.446-.375.864-.785 1.247-1.243l.001-.002A11.974 11.974 0 0 0 13.394 0zM1.804 8.889a12.009 12.009 0 0 0 0 6.222h14.7a3.111 3.111 0 1 0 0-6.222zm.84 8.444C4.61 21.283 8.684 24 13.395 24c3.701 0 7.011-1.677 9.212-4.312l-.001-.002a9.958 9.958 0 0 0-1.247-1.243 4.77 4.77 0 0 0-3.073-1.11z"/></symbol>
+<symbol id="ic-logstash" viewBox="0 0 24 24"><path fill="#F5AB35" d="M13.745 24h8.291v-9.164h-8.29zm-2.618 0h.437v-9.164h-9.6A9.163 9.163 0 0011.127 24m.438-9.164h-9.6V0h.873a8.727 8.727 0 018.727 8.727z"/></symbol>
+<symbol id="ic-kibana" viewBox="0 0 24 24"><path fill="#E8488B" d="M2.625 0v21.591L21.375 0zm10.864 12.47L3.477 24h17.522a18.755 18.755 0 0 0-7.51-11.53z"/></symbol>
+</defs>
+</svg>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -1007,6 +1094,7 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
       <h4>04 / Notable Projects</h4>
       <h2>Architecture Work &<br/>Key Initiatives</h2>
       <div class="gold-line"></div>
+      <p style="margin-top:18px;max-width:560px;color:var(--text-muted);font-size:.9rem">Flagship initiatives that define the current chapter, backed by a seven-year delivery record spanning enterprise cloud, security, and infrastructure engagements.</p>
     </div>
     <div class="projects-grid stagger">
       <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🏫</div><h3>National Identity & Device Integration — N4L</h3><p>Designed API-driven integrations across Azure Entra, Intune, Google Workspace, and JAMF Pro, enabling automated identity and device metadata ingestion for New Zealand schools at national scale.</p><div class="project-tags"><span class="project-tag">Azure Entra</span><span class="project-tag">API Architecture</span><span class="project-tag">Intune</span><span class="project-tag">JAMF Pro</span><span class="project-tag">Compliance</span></div></article>
@@ -1015,6 +1103,626 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
       <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🔬</div><h3>CPUS — Composite Privacy-Utility Score</h3><p>MIT research framework evaluating privacy-utility tradeoffs across generative models with dual-jurisdiction regulatory mapping to GDPR Recital 26 and NZ Privacy Act 2020 IPP10.</p><div class="project-tags"><span class="project-tag">AI Governance</span><span class="project-tag">Privacy ML</span><span class="project-tag">GDPR</span><span class="project-tag">NZ Privacy Act</span><span class="project-tag">Research</span></div></article>
       <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">🌿</div><h3>TAAGI — Tikanga-Aligned AI Governance Index</h3><p>Original AI governance framework integrating Te Mana Raraunga principles for indigenous data sovereignty into enterprise AI risk assessment, complementing NIST AI RMF.</p><div class="project-tags"><span class="project-tag">AI Governance</span><span class="project-tag">Indigenous Data</span><span class="project-tag">Te Mana Raraunga</span><span class="project-tag">Research</span></div></article>
       <article class="project-card fade-up"><div class="project-icon" aria-hidden="true">⚡</div><h3>Hybrid Cloud Modernization — 30+ Projects</h3><p>Established platform standards, configuration patterns, and governance guardrails across 30+ hybrid cloud and M365 transformation projects. Defined architecture principles that reduced duplication.</p><div class="project-tags"><span class="project-tag">Hybrid Cloud</span><span class="project-tag">M365</span><span class="project-tag">Architecture Patterns</span><span class="project-tag">Migration</span></div></article>
+    </div>
+
+    <!-- ══════ PROJECT ARCHIVE ══════ -->
+    <div class="archive-divider" aria-hidden="true"><span class="archive-divider-label">Enterprise Delivery Archive</span></div>
+
+    <div class="archive-intro fade-up">
+      <div>
+        <h3>28 Engagements, 3 Continents, 7 Years</h3>
+        <p>The full delivery record behind the flagship work above — SDDC builds, cloud migrations, security hardening, and managed-service upgrades for banks, telcos, government and retail clients across the UAE, Saudi Arabia, Qatar, South Africa and Pakistan.</p>
+      </div>
+      <div class="archive-stats">
+        <div class="archive-stat"><span class="archive-stat-num">28</span><span class="archive-stat-label">Projects</span></div>
+        <div class="archive-stat"><span class="archive-stat-num">5</span><span class="archive-stat-label">Countries</span></div>
+        <div class="archive-stat"><span class="archive-stat-num">2017–24</span><span class="archive-stat-label">Span</span></div>
+      </div>
+    </div>
+
+    <div class="archive-filters fade-up" role="tablist" aria-label="Filter projects by category">
+      <button class="archive-filter-btn active" data-filter="all" role="tab" aria-selected="true">All <span class="archive-filter-count">28</span></button>
+      <button class="archive-filter-btn" data-filter="cloud" role="tab" aria-selected="false">Cloud &amp; Virtualization <span class="archive-filter-count">16</span></button>
+      <button class="archive-filter-btn" data-filter="security" role="tab" aria-selected="false">Security &amp; Monitoring <span class="archive-filter-count">4</span></button>
+      <button class="archive-filter-btn" data-filter="endpoint" role="tab" aria-selected="false">Endpoint &amp; Identity <span class="archive-filter-count">2</span></button>
+      <button class="archive-filter-btn" data-filter="backup" role="tab" aria-selected="false">Backup &amp; DR <span class="archive-filter-count">6</span></button>
+    </div>
+
+    <div class="archive-grid" id="archive-grid">
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Sep – Oct 2024</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Azure Stack HCI Deployment — Jeddah, KSA</h4>
+          <div class="archive-client">VaporVM · Hyper-converged infrastructure for a Saudi enterprise client</div>
+          <div class="archive-badges">
+            <span class="tech-badge is-text" data-tip="Azure Stack HCI">Az</span>
+            <span class="tech-badge" data-tip="Kubernetes (AKS)"><svg><use href="#ic-kubernetes"/></svg></span>
+            <span class="tech-badge is-text" data-tip="Azure Arc">Arc</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Designed and deployed a resilient Azure Stack HCI architecture with Storage Spaces Direct (S2D), enabling a fault-tolerant, hybrid-ready platform for enterprise workloads.</p>
+          <ul>
+            <li>Integrated Storage Spaces Direct (S2D) for high-performance, software-defined storage with improved redundancy.</li>
+            <li>Enabled Azure Kubernetes Service (AKS) for containerised workload hosting and automation.</li>
+            <li>Configured Azure Arc for unified hybrid governance across on-prem and cloud resources.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="endpoint">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Aug – Oct 2024</span><span class="archive-cat cat-endpoint">Endpoint &amp; Identity</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Intune → Workspace ONE Migration</h4>
+          <div class="archive-client">VaporVM · Enterprise UEM platform migration</div>
+          <div class="archive-badges">
+            <span class="tech-badge is-text" data-tip="Microsoft Intune">Intune</span>
+            <span class="tech-badge" data-tip="VMware Workspace ONE"><svg><use href="#ic-vmware"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Migrated enterprise endpoint management from Microsoft Intune to an on-premises, highly available VMware Workspace ONE deployment with zero-downtime cut-over.</p>
+          <ul>
+            <li>Deployed a redundant, HA Workspace ONE UEM infrastructure across Windows, macOS, Android and iOS fleets.</li>
+            <li>Repackaged and redeployed the full application catalogue without disrupting business continuity.</li>
+            <li>Executed phased enrolment and validation testing for a frictionless end-user transition.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="backup">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Sep – Oct 2023</span><span class="archive-cat cat-backup">Backup &amp; DR</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Veritas NetBackup Upgrade &amp; Operational Excellence</h4>
+          <div class="archive-client">VaporVM · Enterprise backup infrastructure stabilisation</div>
+          <div class="archive-badges">
+            <span class="tech-badge is-text" data-tip="Veritas NetBackup">NBU</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Led a Veritas NetBackup version upgrade and operational excellence initiative, improving backup infrastructure stability, performance, and recovery reliability across enterprise environments.</p>
+          <ul>
+            <li>Validated Master Server, Media Server, and client compatibility, then executed a phased domain-wide upgrade with minimal impact to production backup windows.</li>
+            <li>Hardened catalogue backup procedures and tuned policies, multiplexing, and storage units to shorten backup windows and resolve throughput bottlenecks.</li>
+            <li>Performed comprehensive post-upgrade restore testing, strengthening disaster-recovery readiness and confidence in recovery capability.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Jun – Sep 2023</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Azure Virtual Desktop (AVD) Deployment</h4>
+          <div class="archive-client">VaporVM · Cloud-native remote desktop delivery</div>
+          <div class="archive-badges">
+            <span class="tech-badge is-text" data-tip="Azure Virtual Desktop">AVD</span>
+            <span class="tech-badge is-text" data-tip="FSLogix Profile Containers">FSLogix</span>
+            <span class="tech-badge is-text" data-tip="Microsoft Entra ID">Entra</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Designed and deployed an Azure Virtual Desktop environment, shifting end-user computing from traditional on-prem VDI to a cloud-native, consumption-based desktop delivery model.</p>
+          <ul>
+            <li>Architected pooled and personal host pools, balancing performance and cost, with Entra ID authentication and Conditional Access for secure sign-in.</li>
+            <li>Implemented FSLogix profile containers on Azure Files/Blob for fast, consistent profile loading, backed by golden images with automated update pipelines.</li>
+            <li>Deployed VNet integration, NSGs and private endpoints, eliminating on-prem VDI hardware while centralising identity and access control.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Apr – Jun 2023</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">VMware Tanzu for vSphere — Design &amp; Deployment</h4>
+          <div class="archive-client">VaporVM · Native Kubernetes on existing vSphere infrastructure</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="VMware Tanzu / vSphere"><svg><use href="#ic-vmware"/></svg></span>
+            <span class="tech-badge" data-tip="Kubernetes"><svg><use href="#ic-kubernetes"/></svg></span>
+            <span class="tech-badge is-text" data-tip="NSX-T">NSX-T</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Designed and deployed VMware Tanzu Kubernetes Grid on vSphere, enabling native Kubernetes orchestration directly on existing infrastructure for containerised workloads.</p>
+          <ul>
+            <li>Enabled Workload Management on vSphere clusters to stand up the Supervisor Cluster, then provisioned and configured TKG clusters for application teams.</li>
+            <li>Configured namespaces with resource quotas and RBAC, integrating NSX-T for pod networking and load balancing.</li>
+            <li>Enabled CI/CD pipelines for containerised deployment, consolidating VM and container management under a single vSphere platform.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Mar – May 2023</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Azure Blob Storage Architecture &amp; Migration</h4>
+          <div class="archive-client">VaporVM · Tiered cloud storage replacing legacy on-prem storage</div>
+          <div class="archive-badges">
+            <span class="tech-badge is-text" data-tip="Azure Blob Storage">Blob</span>
+            <span class="tech-badge is-text" data-tip="Azure RBAC">RBAC</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Designed and implemented an Azure Blob Storage solution for unstructured data, replacing legacy on-prem storage with a scalable, tiered cloud architecture.</p>
+          <ul>
+            <li>Configured storage accounts with redundancy (LRS/GRS/ZRS) matched to business-continuity requirements and automated Hot/Cool/Archive lifecycle tiering.</li>
+            <li>Secured data access with RBAC, SAS tokens and private endpoints, then migrated existing on-prem data with minimal disruption.</li>
+            <li>Set up Azure Monitor and Log Analytics for storage performance and access auditing, cutting costs while improving durability.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="backup">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Mar – May 2023</span><span class="archive-cat cat-backup">Backup &amp; DR</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Azure Site Recovery (ASR) Implementation</h4>
+          <div class="archive-client">VaporVM · DR for on-prem VMware workloads</div>
+          <div class="archive-badges">
+            <span class="tech-badge is-text" data-tip="Azure Site Recovery">ASR</span>
+            <span class="tech-badge" data-tip="VMware-to-Azure Replication"><svg><use href="#ic-vmware"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Designed and implemented Azure Site Recovery as a disaster-recovery solution for on-prem VMware workloads, enabling automated failover for mission-critical applications.</p>
+          <ul>
+            <li>Configured replication policies aligned to RPO/RTO requirements and set up continuous replication of VMware workloads to Azure.</li>
+            <li>Built automated, sequenced recovery plans for multi-tier applications, with VNet, subnet and IP mapping for seamless failover connectivity.</li>
+            <li>Ran non-disruptive DR drill testing, validating recovery readiness without capital spend on a secondary physical site.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Aug – Nov 2022</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">AVI Networks (NSX Advanced Load Balancer) — Design &amp; Deployment</h4>
+          <div class="archive-client">VaporVM · Software-defined application delivery &amp; load balancing</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="VMware NSX Advanced Load Balancer"><svg><use href="#ic-vmware"/></svg></span>
+            <span class="tech-badge is-text" data-tip="Application Delivery / WAF">ALB</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Designed and deployed AVI Networks (now VMware NSX Advanced Load Balancer), delivering software-defined application delivery and load balancing across enterprise environments.</p>
+          <ul>
+            <li>Deployed AVI Controllers and Service Engines in a highly available configuration, with elastic autoscaling based on application load.</li>
+            <li>Configured L4/L7 load balancing, SSL termination and WAF policies, migrating existing load-balanced applications with zero-downtime cutover.</li>
+            <li>Set up analytics and health-monitoring dashboards, improving application availability, troubleshooting and capacity planning.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Jun – Oct 2022</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Tanzu Platform Upgrade — Africa</h4>
+          <div class="archive-client">VaporVM · Multi-country enterprise Kubernetes upgrade</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="VMware Tanzu"><svg><use href="#ic-kubernetes"/></svg></span>
+            <span class="tech-badge" data-tip="VMware"><svg><use href="#ic-vmware"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Led capacity planning, upgrade execution, and GRC assessment for Tanzu Kubernetes platforms across enterprise environments in Africa.</p>
+          <ul>
+            <li>Assessed infrastructure utilisation and recommended scalable deployment strategies.</li>
+            <li>Ran a governance, risk &amp; compliance audit against industry security standards.</li>
+            <li>Tuned workload balancing and automation to improve cluster performance and orchestration efficiency.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="backup">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Jul – Aug 2022</span><span class="archive-cat cat-backup">Backup &amp; DR</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Dell Data Protection Manager (DPM) Upgrade &amp; Operational Excellence</h4>
+          <div class="archive-client">VaporVM · Enterprise storage &amp; virtual environment backup</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="Dell Data Protection Manager"><svg><use href="#ic-dell"/></svg></span>
+            <span class="tech-badge is-text" data-tip="Dell Data Protection Manager">DPM</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Led a Dell Data Protection Manager upgrade and operational excellence initiative, enhancing backup performance, reliability and lifecycle management across enterprise storage and virtual environments.</p>
+          <ul>
+            <li>Assessed compatibility and dependencies, then executed the platform upgrade with minimal disruption to scheduled backup and replication jobs.</li>
+            <li>Tuned backup schedules, retention policies and storage allocation, and validated continued integration with VMware and application-aware backups post-upgrade.</li>
+            <li>Improved alerting and reporting to proactively flag degraded jobs, and ran restore validation to confirm recovery-point compliance.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Feb – Mar 2022</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">VMware Stack Upgrade — Govt Client, Qatar</h4>
+          <div class="archive-client">VaporVM · Production &amp; DR modernisation for a government client</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="VMware"><svg><use href="#ic-vmware"/></svg></span>
+            <span class="tech-badge is-text" data-tip="NSX-T / NSX Intelligence">NSX</span>
+            <span class="tech-badge is-text" data-tip="Site Recovery Manager">SRM</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Led a full-stack VMware upgrade spanning ESXi, vCenter, SRM, and NSX-T across production and DR environments with zero-disruption rollback planning.</p>
+          <ul>
+            <li>Migrated Windows-based SRM to an appliance-based solution, strengthening disaster recovery.</li>
+            <li>Upgraded NSX-T and NSX Intelligence, enforcing zero-trust micro-segmentation across workloads.</li>
+            <li>Built a centralised monitoring dashboard for real-time visibility across the VMware estate.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="security">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Nov 2021 – Jan 2022</span><span class="archive-cat cat-security">Security &amp; Monitoring</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Infrastructure Patching — Emirates Transport</h4>
+          <div class="archive-client">VaporVM · Enterprise-wide security patching programme</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="VMware"><svg><use href="#ic-vmware"/></svg></span>
+            <span class="tech-badge is-text" data-tip="Microsoft Exchange Server">EXCH</span>
+            <span class="tech-badge is-text" data-tip="SCCM">SCCM</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Ran a strategic patching and upgrade programme across VMware, SCCM, Active Directory, Exchange and Commvault to close security gaps with minimal downtime.</p>
+          <ul>
+            <li>Applied critical VMware version updates to improve platform stability and security posture.</li>
+            <li>Upgraded SCCM to strengthen endpoint management and patching automation.</li>
+            <li>Secured Exchange and hardened Active Directory with the latest compliance updates.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Nov 2021</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Virtual Infrastructure Upgrade — DAFZA</h4>
+          <div class="archive-client">VaporVM · Multi-site HCI &amp; disaster-recovery upgrade</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="Dell VxRail"><svg><use href="#ic-dell"/></svg></span>
+            <span class="tech-badge" data-tip="VMware"><svg><use href="#ic-vmware"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Upgraded VxRail nodes, Dell EHC, VDI, and RecoverPoint components across multiple sites, then validated resilience with full DR failover testing.</p>
+          <ul>
+            <li>Upgraded VxRail clusters and Dell EHC to modernise the hyper-converged estate.</li>
+            <li>Improved VDI performance and vROPs monitoring/analytics coverage.</li>
+            <li>Ran rigorous RP4VM failover testing to validate business-continuity readiness.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="backup">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Mar – Apr 2021</span><span class="archive-cat cat-backup">Backup &amp; DR</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Commvault Upgrade &amp; Operational Excellence</h4>
+          <div class="archive-client">VaporVM · Backup reliability across virtual, physical &amp; application workloads</div>
+          <div class="archive-badges">
+            <span class="tech-badge is-text" data-tip="Commvault">CV</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Led a Commvault version upgrade and operational excellence initiative, enhancing backup reliability, performance and compliance across enterprise workloads.</p>
+          <ul>
+            <li>Ran pre-upgrade compatibility checks across CommServe, MediaAgents and clients, then executed a phased upgrade with minimal disruption to backup schedules.</li>
+            <li>Remediated recurring job failures and tuned storage policies and deduplication, reducing storage growth and backup windows.</li>
+            <li>Implemented proactive alerting and reporting, and validated data recoverability with post-upgrade restore testing to strengthen compliance.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="security">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Sep – Nov 2019</span><span class="archive-cat cat-security">Security &amp; Monitoring</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Cisco AppDynamics — Design &amp; Deploy</h4>
+          <div class="archive-client">VaporVM · Government entity, KSA</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="Cisco AppDynamics"><svg><use href="#ic-cisco"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Designed and deployed an on-premises Cisco AppDynamics solution for real-time application performance monitoring across critical government systems.</p>
+          <ul>
+            <li>Enabled end-user monitoring for real-time visibility into interactions and response times.</li>
+            <li>Integrated database performance analytics to identify bottlenecks and optimise queries.</li>
+            <li>Deployed .NET application tracking for seamless, in-house application operation.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Jul – Oct 2019</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">ITSM &amp; VMware Managed Services</h4>
+          <div class="archive-client">VaporVM · Major retail chain, Johannesburg, South Africa</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="VMware"><svg><use href="#ic-vmware"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Delivered ITSM and VMware managed services for a multi-site retail chain, streamlining incident, change and problem management.</p>
+          <ul>
+            <li>Established best-practice ITSM frameworks across incident, change and problem management.</li>
+            <li>Managed virtualised environments to sustain 99.9% uptime and system resilience.</li>
+            <li>Implemented proactive monitoring and performance tuning, reducing service disruptions.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="security">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Apr – Jun 2019</span><span class="archive-cat cat-security">Security &amp; Monitoring</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">ELK Stack — Cisco Netflow Ingestion</h4>
+          <div class="archive-client">VaporVM · Leading UAE telecom provider</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="Elasticsearch"><svg><use href="#ic-elasticsearch"/></svg></span>
+            <span class="tech-badge" data-tip="Logstash"><svg><use href="#ic-logstash"/></svg></span>
+            <span class="tech-badge" data-tip="Kibana"><svg><use href="#ic-kibana"/></svg></span>
+            <span class="tech-badge" data-tip="Cisco Netflow"><svg><use href="#ic-cisco"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Designed an Elasticsearch, Logstash and Kibana integration with the core network for real-time traffic analysis and anomaly detection.</p>
+          <ul>
+            <li>Implemented scalable Elasticsearch indexing for efficient querying of telecom traffic data.</li>
+            <li>Centralised log collection and parsing with Logstash across diverse network sources.</li>
+            <li>Built interactive Kibana dashboards for network performance and security anomaly detection.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="endpoint">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Nov – Dec 2018</span><span class="archive-cat cat-endpoint">Endpoint &amp; Identity</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Workspace ONE UEM — CDC Pakistan</h4>
+          <div class="archive-client">Jaffer Business Systems · Unified endpoint management rollout</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="VMware Workspace ONE"><svg><use href="#ic-vmware"/></svg></span>
+            <span class="tech-badge is-text" data-tip="Workspace ONE">WS1</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Deployed Workspace ONE as a unified endpoint management platform, enabling secure, single-console access across Windows, macOS, iOS and Android.</p>
+          <ul>
+            <li>Unified device management for knowledge-worker, BYOD and high-security use cases.</li>
+            <li>Enforced zero-trust security with MFA, conditional access and encryption policies.</li>
+            <li>Simplified IT operations while improving workforce mobility and compliance.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Sep – Nov 2018</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">SDDC Deployment — Fuji Fertilizer, Karachi</h4>
+          <div class="archive-client">Jaffer Business Systems · Greenfield virtualised data centre</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="HP ProLiant"><svg><use href="#ic-hp"/></svg></span>
+            <span class="tech-badge" data-tip="VMware vSphere / NSX / vSAN"><svg><use href="#ic-vmware"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Led end-to-end deployment of a new HP ProLiant and VMware-based data centre, from scope-of-work through user acceptance testing.</p>
+          <ul>
+            <li>Stood up VMware vSphere/vCenter 6.5 as the centralised virtualisation platform.</li>
+            <li>Implemented SRM for automated disaster recovery and vSAN for hyper-converged storage.</li>
+            <li>Integrated NSX for network virtualisation and micro-segmentation.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Jun – Sep 2018</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">vCloud Suite 2017 — CAA Pakistan</h4>
+          <div class="archive-client">Jaffer Business Systems · Enterprise IT infrastructure build</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="HP ProLiant"><svg><use href="#ic-hp"/></svg></span>
+            <span class="tech-badge" data-tip="VMware vCloud Suite"><svg><use href="#ic-vmware"/></svg></span>
+            <span class="tech-badge" data-tip="Veeam"><svg><use href="#ic-veeam"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Designed, deployed and validated a highly available IT infrastructure on HP ProLiant and VMware vCloud Suite 2017 with Veeam-backed data protection.</p>
+          <ul>
+            <li>Integrated cloud management, automation and self-service via vCloud Suite.</li>
+            <li>Deployed SRM for automated DR and vSAN for redundant, cost-efficient storage.</li>
+            <li>Combined HP Data Protect and Veeam for improved RTO/RPO backup metrics.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="backup">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Jun – Jul 2018</span><span class="archive-cat cat-backup">Backup &amp; DR</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">SDDC + Veeam B&amp;R 9.5 — Shan Foods</h4>
+          <div class="archive-client">Jaffer Business Systems · Infrastructure build &amp; server migration</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="HP ProLiant"><svg><use href="#ic-hp"/></svg></span>
+            <span class="tech-badge" data-tip="VMware vSphere"><svg><use href="#ic-vmware"/></svg></span>
+            <span class="tech-badge" data-tip="Veeam Backup &amp; Replication"><svg><use href="#ic-veeam"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Deployed a new HP/VMware data centre and migrated existing Windows and Linux servers into it with Veeam Backup &amp; Replication 9.5 for business continuity.</p>
+          <ul>
+            <li>Stood up vSphere 6.5/vCenter as a scalable, centralised virtualisation platform.</li>
+            <li>Migrated live Windows and Linux workloads with minimal downtime.</li>
+            <li>Implemented Veeam B&amp;R 9.5 for fast, reliable backup and disaster recovery.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Dec 2017 – Jun 2018</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Desktop Virtualization — International Textile Ltd</h4>
+          <div class="archive-client">Jaffer Business Systems · VDI on Linux for a remote workforce</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="HP ProLiant"><svg><use href="#ic-hp"/></svg></span>
+            <span class="tech-badge" data-tip="VMware Horizon"><svg><use href="#ic-vmware"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Deployed VMware Horizon 7 VDI on Linux with automated disaster recovery, improving remote-workforce capability on HP ProLiant infrastructure.</p>
+          <ul>
+            <li>Delivered Linux-based VDI to expand secure remote access for end users.</li>
+            <li>Implemented SRM-based DR and vSAN hyper-converged storage for resilience.</li>
+            <li>Validated the platform through structured UAT before go-live.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Oct 2017 – Mar 2018</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">SDDC &amp; Hyper-V Migration — Dubai Islamic Bank</h4>
+          <div class="archive-client">Jaffer Business Systems · Banking infrastructure modernisation</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="HP BladeSystem"><svg><use href="#ic-hp"/></svg></span>
+            <span class="tech-badge" data-tip="VMware vSphere / SRM"><svg><use href="#ic-vmware"/></svg></span>
+            <span class="tech-badge is-text" data-tip="IBM Enterprise Storage">IBM</span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Migrated a banking workload estate from Hyper-V to VMware on HP BladeSystem and IBM enterprise storage, with automated DR via SRM.</p>
+          <ul>
+            <li>Delivered end-to-end infrastructure planning, SOW and execution roadmap.</li>
+            <li>Migrated Windows and Linux workloads from Hyper-V to VMware with minimal downtime.</li>
+            <li>Implemented SRM for rapid, automated failover and business continuity.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Oct 2017 – Jan 2018</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">SDDC &amp; Hyper-V Migration — Central Depository Company</h4>
+          <div class="archive-client">Jaffer Business Systems · Financial-sector infrastructure build</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="Dell BladeSystem"><svg><use href="#ic-dell"/></svg></span>
+            <span class="tech-badge" data-tip="VMware vSphere / vROPs"><svg><use href="#ic-vmware"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Built a virtualised data centre on Dell BladeSystem and EMC storage, migrating Hyper-V workloads to VMware with vROPs monitoring in place.</p>
+          <ul>
+            <li>Delivered scalable, high-performance compute on Dell BladeSystem with EMC storage.</li>
+            <li>Integrated vRealize Operations for proactive capacity planning and issue resolution.</li>
+            <li>Completed Hyper-V to VMware migration with improved resource utilisation.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Nov 2017 – Jan 2018</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">SDDC &amp; P2V Migration — IGI Life</h4>
+          <div class="archive-client">Jaffer Business Systems · Physical-to-virtual transformation</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="HP ProLiant"><svg><use href="#ic-hp"/></svg></span>
+            <span class="tech-badge" data-tip="VMware vSAN / SRM"><svg><use href="#ic-vmware"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Converted legacy physical servers to a VMware virtual estate on HP ProLiant hardware with vSAN storage and SRM-based disaster recovery.</p>
+          <ul>
+            <li>Designed a centralised vSphere/vCenter platform for streamlined workload management.</li>
+            <li>Delivered a P2V migration that improved scalability and resource efficiency.</li>
+            <li>Validated stability, security and performance through structured UAT.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="cloud">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Aug – Oct 2017</span><span class="archive-cat cat-cloud">Cloud &amp; Virtualization</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">1GB → 10GB Network Migration — Getz Pharma</h4>
+          <div class="archive-client">Jaffer Business Systems · Network &amp; storage performance upgrade</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="HPE 10G Switches"><svg><use href="#ic-hp"/></svg></span>
+            <span class="tech-badge" data-tip="VMware vMotion"><svg><use href="#ic-vmware"/></svg></span>
+            <span class="tech-badge" data-tip="Veeam Replication"><svg><use href="#ic-veeam"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Resolved vMotion and Veeam replication bottlenecks by migrating from 1GbE to HPE 10G TOR switches and Fibre Channel storage connectivity.</p>
+          <ul>
+            <li>Achieved a 10x bandwidth increase, eliminating congestion and latency.</li>
+            <li>Sped up vMotion and Veeam replication for faster VM migration and DR readiness.</li>
+            <li>Ran a full VMware health check and performance tuning pass across the estate.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="security">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">May – Jul 2017</span><span class="archive-cat cat-security">Security &amp; Monitoring</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Kaspersky Email Security — Soneri Bank</h4>
+          <div class="archive-client">Soneri Bank Limited · Exchange Server threat protection</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="Kaspersky Security for Exchange"><svg><use href="#ic-kaspersky"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Installed and configured Kaspersky Security for Exchange Server, strengthening the bank's email threat detection and regulatory compliance.</p>
+          <ul>
+            <li>Deployed real-time scanning, spam filtering and malware protection.</li>
+            <li>Configured policy-based content filtering to improve email hygiene.</li>
+            <li>Validated performance to ensure minimal impact on mail delivery.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="archive-card" data-category="backup">
+        <summary class="archive-head">
+          <div class="archive-top-row"><span class="archive-period">Jul 2017</span><span class="archive-cat cat-backup">Backup &amp; DR</span></div>
+          <h4 class="archive-title" style="text-transform:none;letter-spacing:normal;font-family:'Manrope',sans-serif">Veeam Upgrade 8.0 → 9.5 — Soneri Bank</h4>
+          <div class="archive-client">Soneri Bank Limited · Backup &amp; DR modernisation</div>
+          <div class="archive-badges">
+            <span class="tech-badge" data-tip="Veeam Backup &amp; Replication"><svg><use href="#ic-veeam"/></svg></span>
+          </div>
+          <span class="archive-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="archive-body">
+          <p>Upgraded Veeam One and Veeam Backup &amp; Replication from 8.0 to 9.5, improving backup efficiency and disaster-recovery readiness.</p>
+          <ul>
+            <li>Conducted pre-upgrade compatibility checks and risk mitigation planning.</li>
+            <li>Fine-tuned backup schedules and storage policies to reduce backup windows.</li>
+            <li>Validated data integrity and job consistency post-upgrade.</li>
+          </ul>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>
@@ -1283,6 +1991,46 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
     });
   })();
 
+
+// ── PROJECT ARCHIVE: FILTERS ──
+  (function initArchive(){
+    const grid=document.getElementById('archive-grid');
+    if(!grid)return;
+    const cards=[...grid.querySelectorAll('.archive-card')];
+    const btns=[...document.querySelectorAll('.archive-filter-btn')];
+
+    // stagger the card entrance animation once, then leave it be
+    cards.forEach((c,i)=>{c.style.animationDelay=(i*0.045)+'s'});
+
+    btns.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        btns.forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
+        btn.classList.add('active');btn.setAttribute('aria-selected','true');
+        const f=btn.dataset.filter;
+        let i=0;
+        cards.forEach(c=>{
+          const match=(f==='all'||c.dataset.category===f);
+          c.classList.toggle('is-hidden',!match);
+          if(match){
+            c.style.animation='none';
+            void c.offsetWidth; // restart the entrance animation on filter change
+            c.style.animationDelay=(i*0.045)+'s';
+            c.style.animation='';
+            i++;
+          }
+        });
+      });
+    });
+
+    // only one archive card open at a time, for a tidier scan
+    cards.forEach(card=>{
+      card.addEventListener('toggle',()=>{
+        if(card.open){
+          cards.forEach(other=>{if(other!==card)other.open=false});
+        }
+      });
+    });
+  })();
 
 // ── FORM ──
   const form=document.getElementById('contact-form'),fs=document.getElementById('form-success'),fe=document.getElementById('form-error'),feTxt=document.querySelector('.form-error-text');
