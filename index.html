@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y84LZCSNLK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Y84LZCSNLK');
-</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Saad Hussain — IT Professional | TOGAF® · Azure · PMP</title>
@@ -587,22 +578,47 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
 .fade-up{opacity:0;transform:translateY(36px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
 .fade-up.visible{opacity:1;transform:translateY(0)}
 
-.stagger .fade-up:nth-child(1){transition-delay:0ms}
-.stagger .fade-up:nth-child(2){transition-delay:70ms}
-.stagger .fade-up:nth-child(3){transition-delay:140ms}
-.stagger .fade-up:nth-child(4){transition-delay:210ms}
-.stagger .fade-up:nth-child(5){transition-delay:280ms}
-.stagger .fade-up:nth-child(6){transition-delay:350ms}
-.stagger .fade-up:nth-child(7){transition-delay:420ms}
-.stagger .fade-up:nth-child(8){transition-delay:490ms}
+.fade-left{opacity:0;transform:translateX(-46px);transition:opacity .75s cubic-bezier(.4,0,.2,1),transform .75s cubic-bezier(.4,0,.2,1)}
+.fade-left.visible{opacity:1;transform:translateX(0)}
+.fade-right{opacity:0;transform:translateX(46px);transition:opacity .75s cubic-bezier(.4,0,.2,1),transform .75s cubic-bezier(.4,0,.2,1)}
+.fade-right.visible{opacity:1;transform:translateX(0)}
+.fade-scale{opacity:0;transform:scale(.92);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.fade-scale.visible{opacity:1;transform:scale(1)}
+
+.stagger .fade-up:nth-child(1),.stagger .fade-left:nth-child(1),.stagger .fade-right:nth-child(1),.stagger .fade-scale:nth-child(1){transition-delay:0ms}
+.stagger .fade-up:nth-child(2),.stagger .fade-left:nth-child(2),.stagger .fade-right:nth-child(2),.stagger .fade-scale:nth-child(2){transition-delay:70ms}
+.stagger .fade-up:nth-child(3),.stagger .fade-left:nth-child(3),.stagger .fade-right:nth-child(3),.stagger .fade-scale:nth-child(3){transition-delay:140ms}
+.stagger .fade-up:nth-child(4),.stagger .fade-left:nth-child(4),.stagger .fade-right:nth-child(4),.stagger .fade-scale:nth-child(4){transition-delay:210ms}
+.stagger .fade-up:nth-child(5),.stagger .fade-left:nth-child(5),.stagger .fade-right:nth-child(5),.stagger .fade-scale:nth-child(5){transition-delay:280ms}
+.stagger .fade-up:nth-child(6),.stagger .fade-left:nth-child(6),.stagger .fade-right:nth-child(6),.stagger .fade-scale:nth-child(6){transition-delay:350ms}
+.stagger .fade-up:nth-child(7),.stagger .fade-left:nth-child(7),.stagger .fade-right:nth-child(7),.stagger .fade-scale:nth-child(7){transition-delay:420ms}
+.stagger .fade-up:nth-child(8),.stagger .fade-left:nth-child(8),.stagger .fade-right:nth-child(8),.stagger .fade-scale:nth-child(8){transition-delay:490ms}
+
+/* ─── SCROLL PARALLAX ORBS ───
+   Ambient depth layers per section, driven by JS translate3d based on
+   position relative to viewport centre. Purely decorative and low
+   opacity so they never compete with foreground content. */
+.parallax-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;will-change:transform;filter:blur(1px)}
+.parallax-orb.o-teal{background:radial-gradient(circle,rgba(var(--pc),.10) 0%,transparent 70%)}
+.parallax-orb.o-blue{background:radial-gradient(circle,rgba(125,169,208,.09) 0%,transparent 70%)}
+.parallax-orb.o-sand{background:radial-gradient(circle,rgba(212,181,135,.08) 0%,transparent 70%)}
+.parallax-orb.o-sage{background:radial-gradient(circle,rgba(155,201,166,.08) 0%,transparent 70%)}
+
+/* Hero content settles/lifts as the page scrolls past it */
+.hero-content,.hero-right{transition:opacity .1s linear;will-change:transform,opacity}
 
 @media(prefers-reduced-motion:reduce){
-  .fade-up{opacity:1;transform:none;transition:none}
+  .fade-up,.fade-left,.fade-right,.fade-scale{opacity:1;transform:none;transition:none}
   .hero-glow,.hero-glow-2{animation:none}
   .hero-tag::before{animation:none}
   .typing-cursor{animation:none}
   .photo-badge{animation:none}
   .hero-photo-ring{animation:none}
+  .parallax-orb{display:none}
+  .hero-content,.hero-right{transform:none!important;opacity:1!important}
+}
+@media(max-width:768px){
+  .parallax-orb{display:none} /* keep mobile scroll light and jank-free */
 }
 
 /* ─── SCROLLBAR ─── */
@@ -750,14 +766,16 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
 
 <!-- ══════════ ABOUT ══════════ -->
 <section id="about" class="section" style="background:var(--bg-elevated)" aria-label="About section">
+  <div class="parallax-orb o-teal" data-parallax-speed="0.12" style="width:380px;height:380px;top:-8%;right:-6%" aria-hidden="true"></div>
+  <div class="parallax-orb o-blue" data-parallax-speed="-0.08" style="width:260px;height:260px;bottom:-4%;left:-4%" aria-hidden="true"></div>
   <div class="container">
     <div class="section-header fade-up">
       <h4>01 / About</h4>
       <h2>Architecture that empowers teams,<br/>Clarifies decisions,<br/>Removes friction,<br/>not architecture that blocks progress...</h2>
       <div class="gold-line"></div>
     </div>
-    <div class="about-grid fade-up">
-      <div class="about-text">
+    <div class="about-grid">
+      <div class="about-text fade-left">
         <p>
           With over a decade of experience across IT infrastructure, cloud services, and managed operations, I specialise in architecting, optimising, and governing enterprise‑grade technology platforms that elevate reliability, strengthen security, and drive operational excellence. My work spans cloud architecture, pre‑sales consulting, service delivery, and digital transformation—enabling organisations across Canada, the USA, the Gulf, and APAC to modernise with confidence and scale with resilience.
         </p>
@@ -767,7 +785,7 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
         <p>
 		<h4>My Mission:</h4> To bridge the gap between complex technical challenges and meaningful business outcomes. I am driven by the opportunity to design scalable, high‑performance solutions that empower organisations to operate efficiently, innovate faster, and stay future‑ready. Whether leading cloud transformation, shaping enterprise architecture, or advancing AI governance, my goal is to deliver measurable impact and long‑term value.        </p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="fade-right" style="display:flex;flex-direction:column;gap:16px">
         <div class="about-card">
           <h4>What I’m Known For</h4>
           <p style="font-size:1rem;color:var(--text-heading);font-weight:600;margin-top:8px">Cloud & Virtualisation</p>
@@ -797,6 +815,8 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
 
 <!-- ══════════ EXPERIENCE ══════════ -->
 <section id="experience" class="section" aria-label="Work experience">
+  <div class="parallax-orb o-sand" data-parallax-speed="0.1" style="width:320px;height:320px;top:6%;left:-6%" aria-hidden="true"></div>
+  <div class="parallax-orb o-teal" data-parallax-speed="-0.1" style="width:300px;height:300px;bottom:2%;right:-5%" aria-hidden="true"></div>
   <div class="container">
     <div class="section-header fade-up">
       <h4>02 / Experience</h4>
@@ -1075,6 +1095,8 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
 
 <!-- ══════════ SKILLS ══════════ -->
 <section id="skills" class="section" style="background:var(--bg-elevated)" aria-label="Skills">
+  <div class="parallax-orb o-sage" data-parallax-speed="0.09" style="width:300px;height:300px;top:-6%;right:8%" aria-hidden="true"></div>
+  <div class="parallax-orb o-blue" data-parallax-speed="-0.12" style="width:220px;height:220px;bottom:-6%;left:6%" aria-hidden="true"></div>
   <div class="container">
     <div class="section-header fade-up">
       <h4>03 / Skills</h4>
@@ -1098,6 +1120,8 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
 
 <!-- ══════════ PROJECTS ══════════ -->
 <section id="projects" class="section" aria-label="Notable projects">
+  <div class="parallax-orb o-teal" data-parallax-speed="0.11" style="width:340px;height:340px;top:4%;left:-7%" aria-hidden="true"></div>
+  <div class="parallax-orb o-sand" data-parallax-speed="-0.09" style="width:280px;height:280px;bottom:6%;right:-5%" aria-hidden="true"></div>
   <div class="container">
     <div class="section-header fade-up">
       <h4>04 / Notable Projects</h4>
@@ -1738,6 +1762,8 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
 
 <!-- ══════════ EDUCATION ══════════ -->
 <section id="education" class="section" style="background:var(--bg-elevated)" aria-label="Education">
+  <div class="parallax-orb o-blue" data-parallax-speed="0.1" style="width:280px;height:280px;top:-5%;right:-5%" aria-hidden="true"></div>
+  <div class="parallax-orb o-sage" data-parallax-speed="-0.1" style="width:240px;height:240px;bottom:-4%;left:-4%" aria-hidden="true"></div>
   <div class="container">
     <div class="section-header fade-up">
       <h4>05 / Education</h4>
@@ -1777,6 +1803,7 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
 
 <!-- ══════════ ACHIEVEMENTS ══════════ -->
 <section id="achievements" class="section" aria-label="Achievements">
+  <div class="parallax-orb o-sand" data-parallax-speed="0.12" style="width:300px;height:300px;top:2%;right:-6%" aria-hidden="true"></div>
   <div class="container">
     <div class="section-header fade-up">
       <h4>06 / Achievements</h4>
@@ -1796,6 +1823,8 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
 
 <!-- ══════════ CONTACT ══════════ -->
 <section id="contact" class="section" style="background:var(--bg-elevated)" aria-label="Contact">
+  <div class="parallax-orb o-teal" data-parallax-speed="0.1" style="width:320px;height:320px;bottom:-8%;left:-6%" aria-hidden="true"></div>
+  <div class="parallax-orb o-blue" data-parallax-speed="-0.1" style="width:220px;height:220px;top:-5%;right:4%" aria-hidden="true"></div>
   <div class="container">
     <div class="section-header fade-up">
       <h4>07 / Contact</h4>
@@ -1930,11 +1959,46 @@ footer{background:var(--bg-primary);border-top:1px solid var(--border-subtle);pa
   root.setAttribute('data-theme',localStorage.getItem('portfolio-theme')||'dark');
   tt.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);localStorage.setItem('portfolio-theme',n)});
 
-  // ── INTERSECTION OBSERVER ──
+  // ── INTERSECTION OBSERVER ── (fade-up / fade-left / fade-right / fade-scale)
+  const revealEls=[...document.querySelectorAll('.fade-up,.fade-left,.fade-right,.fade-scale')].filter(el=>!el.closest('#hero'));
   if(!prefersRM){
     const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}}),{threshold:.08,rootMargin:'0px 0px -50px 0px'});
-    document.querySelectorAll('.fade-up:not(#hero .fade-up)').forEach(el=>obs.observe(el));
-  }else{document.querySelectorAll('.fade-up').forEach(el=>el.classList.add('visible'))}
+    revealEls.forEach(el=>obs.observe(el));
+  }else{revealEls.forEach(el=>el.classList.add('visible'))}
+
+  // ── SCROLL PARALLAX ──
+  // Ambient background orbs drift at different speeds than the page scroll,
+  // and the hero content settles/recedes as the viewport moves past it.
+  if(!prefersRM && !matchMedia('(max-width:768px)').matches){
+    const orbs=[...document.querySelectorAll('.parallax-orb')];
+    const heroContent=document.querySelector('.hero-content');
+    const heroRight=document.querySelector('.hero-right');
+    const heroSection=document.getElementById('hero');
+    let parallaxRaf=null;
+
+    function renderParallax(){
+      const vh=innerHeight,vc=vh/2;
+      orbs.forEach(el=>{
+        const speed=parseFloat(el.dataset.parallaxSpeed)||0.1;
+        const rect=el.getBoundingClientRect();
+        if(rect.bottom<-300||rect.top>vh+300)return; // skip off-screen orbs
+        const dist=(rect.top+rect.height/2)-vc;
+        el.style.transform=`translate3d(0,${(-dist*speed).toFixed(1)}px,0)`;
+      });
+      if(heroSection){
+        const h=heroSection.offsetHeight||1;
+        const p=Math.min(Math.max(scrollY/h,0),1);
+        const ease=p*p*(3-2*p); // smoothstep, gentler near the top
+        if(heroContent){heroContent.style.opacity=String(1-ease*1.15);heroContent.style.transform=`translate3d(0,${(ease*46).toFixed(1)}px,0)`}
+        if(heroRight){heroRight.style.opacity=String(1-ease*1.15);heroRight.style.transform=`translate3d(0,${(ease*64).toFixed(1)}px,0) scale(${(1-ease*0.06).toFixed(3)})`}
+      }
+      parallaxRaf=null;
+    }
+    function queueParallax(){if(parallaxRaf===null)parallaxRaf=requestAnimationFrame(renderParallax)}
+    addEventListener('scroll',queueParallax,{passive:true});
+    addEventListener('resize',queueParallax);
+    renderParallax();
+  }
 
   // ── EXPERIENCE: SCHEMATIC RAIL ──
   (function initExperienceRail(){
